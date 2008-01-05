@@ -11,7 +11,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/pkg-perl/trunk/libalien-wxwidgets-perl/
 
 Package: libalien-wxwidgets-perl
 Architecture: any
-Depends: ${misc:Depends}, libwxgtk2.6-dev (>= ${wx:current}), libwxgtk2.6-dev (<< ${wx:next})
+Depends: libmodule-pluggable-perl, ${misc:Depends}, libwxgtk2.6-dev (>= ${wx:current}), libwxgtk2.6-dev (<< ${wx:next})
 Description: building, finding and using wxWidgets binaries
  Detects configuration settings of an installed wxWidgets.  Can be used in
  order to help in the process of building modules which require wxWidgets.
