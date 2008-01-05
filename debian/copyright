@@ -1,0 +1,69 @@
+This package was debianized by Roberto C. Sanchez <roberto@connexer.com> on
+Fri,  4 Jan 2008 10:38:49 -0500.
+
+It was downloaded from http://search.cpan.org/~mbarbon/Alien-wxWidgets-0.32/lib/Alien/wxWidgets.pm
+
+Upstream Author: Mattia Barbon <mbarbon@cpan.org>
+
+Copyright: (c) 2005-2006, Mattia Barbon <mbarbon@cpan.org>
+
+License:
+
+This program is free software; you can redistribute it and/or modify it under
+the terms of either:
+
+   a) the GNU General Public License as published by the Free Software
+      Foundation; either version 1, or (at your option) any later
+      version, or
+
+   b) the "Artistic License" which comes with Perl.
+
+On Debian systems, the complete text of the GNU General Public License can be
+found in `/usr/share/common-licenses/GPL' and the Artistic Licence in
+`/usr/share/common-licenses/Artistic'.
+
+The Debian packaging is (C) 2008, Roberto C. Sanchez <roberto@connexer.com> and
+is licensed under the GPL version 2 or later.
+
+Additional license for specific parts of this module follow below:
+
+Alien::wxWidgets
+
+    Copyright (c) 2005, 2006 Mattia Barbon <mbarbon@cpan.org>
+
+    This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself
+
+inc/bin/patch
+
+    was taken from the Perl Power Tools distributions
+
+    Copyright (c) 1999 Moogle Stuffy Software <tgy@chocobo.org>
+
+    You may play with this software in accordance with the Perl Artistic License.
+
+    You may use this documentation under the auspices of the GNU General Public License.
+
+inc/bin/patch.exe
+
+    was downloaded from http://gnuwin32.sourceforge.net/packages/patch.htm ad is copyrighted by its authors.
+
+    This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+
+bundled files from CPAN
+
+        inc/File/Fetch/Item.pm
+        inc/File/Fetch.pm
+        inc/File/Spec/Unix.pm
+        inc/IPC/Cmd.pm
+        inc/Locale/Maketext/Simple.pm
+        inc/Module/Load/Conditional.pm
+        inc/Module/Load.pm
+        inc/Params/Check.pm
+        inc/Archive/Extract.pm
+
+    Are copyright their respective authors an can be used according to the license specified in their CPAN distributions.
+
