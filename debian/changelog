@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.32-2) unstable; urgency=low
+
+  * Add missing dependency.
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Sat,  5 Jan 2008 14:55:35 -0500
+
 libalien-wxwidgets-perl (0.32-1) unstable; urgency=low
 
   * Initial release (Closes: #459256)
