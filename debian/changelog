@@ -1,6 +1,6 @@
 libalien-wxwidgets-perl (0.32-1) unstable; urgency=low
 
-  * Initial release (Closes: #459256:)
+  * Initial release (Closes: #459256)
 
  -- Roberto C. Sanchez <roberto@connexer.com>  Fri,  4 Jan 2008 10:38:49 -0500
 
