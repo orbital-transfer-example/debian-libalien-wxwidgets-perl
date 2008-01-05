@@ -3,6 +3,9 @@
 # packages. It was created by Marc Brockschmidt <marc@dch-faq.de> for
 # the Debian Perl Group (http://pkg-perl.alioth.debian.org/) but may
 # be used freely wherever it is useful.
+#
+# It was later modified by Jason Kohles <email@jasonkohles.com>
+# http://www.jasonkohles.com/ to support Module::Build installed modules
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
@@ -26,21 +29,13 @@ endif
 
 TMP     =$(CURDIR)/debian/$(PACKAGE)
 
-# Allow disabling build optimation by setting noopt in
-# $DEB_BUILD_OPTIONS
-CFLAGS = -Wall -g
-ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
-        CFLAGS += -O0
-else
-        CFLAGS += -O2
-endif
-
 build: build-stamp
 build-stamp:
 	dh_testdir
 
 	# Add commands to compile the package here
-	$(PERL) Makefile.PL INSTALLDIRS=vendor
+	$(PERL) Build.PL installdirs=vendor
+	OPTIMIZE="-Wall -O2 -g" $(PERL) Build
 
 	touch build-stamp
 
@@ -50,7 +45,7 @@ clean:
 	rm -f debian/libalien-wxwidgets-perl.substvars
 
 	# Add commands to clean up after the build process here
-	[ ! -f Makefile ] || $(MAKE) realclean
+	[ ! -f Build ] || $(PERL) Build distclean
 
 	dh_clean build-stamp install-stamp
 
@@ -61,23 +56,17 @@ install-stamp:
 	dh_clean -k
 
 	# Add commands to install the package into debian/$PACKAGE_NAME here
-	$(MAKE) test
-	$(MAKE) install DESTDIR=$(TMP)
+	$(PERL) Build test
+	$(PERL) Build install destdir=$(TMP)
 
 	find $(TMP) -type f -name .packlist | xargs rm -f
 	rmdir --ignore-fail-on-non-empty --parents $(TMP)/usr/lib/perl5/auto/Alien/wxWidgets/
 	rmdir --ignore-fail-on-non-empty --parents $(TMP)/usr/share/perl5
 	install -d $(TMP)/usr/share/lintian/overrides
 	cp debian/lintian-overrides $(TMP)/usr/share/lintian/overrides/libalien-wxwidgets-perl
-
 	touch install-stamp
 
-# Build architecture-independent files here.
-binary-indep: build install
-# We have nothing to do by default.
-
-# Build architecture-dependent files here.
-binary-arch: build install
+binary-arch:
 	dh_testdir
 	dh_testroot
 	echo 'wx:current=$(VMAJOR).$(VMINOR).$(VPATCH)~' \
@@ -87,15 +76,18 @@ binary-arch: build install
 	dh_installdocs
 	dh_installman
 	dh_installchangelogs Changes
+	dh_perl
 	dh_link
 	dh_strip
 	dh_compress
 	dh_fixperms
 	dh_installdeb
-	dh_perl 
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
+
+binary-indep: build install
+# We have nothing to do by default.
 
 source diff:                                                                  
 	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
