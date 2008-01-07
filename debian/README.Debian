@@ -1,6 +1,9 @@
 libalien-wxwidgets-perl for Debian
 ----------------------------------
 
-<possible notes regarding this package - if none, delete this file>
+This package is, for the most part useless.  That is, it is not useful on its
+own.  It is a dependency of libwx-perl.  I imagine that other packages which
+need to determine information about the installed wxWidgets could also use it.
+However, there are no others of which I am aware.
 
  -- Roberto C. Sanchez <roberto@connexer.com>  Sat, 24 Nov 2007 10:38:49 -0500
