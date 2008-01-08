@@ -59,7 +59,6 @@ install-stamp:
 	# Add commands to install the package into debian/$PACKAGE_NAME here
 	$(PERL) Build install destdir=$(TMP) create_packlist=0
 
-	rmdir --ignore-fail-on-non-empty --parents $(TMP)/usr/lib/perl5/auto/Alien/wxWidgets/
 	rmdir --ignore-fail-on-non-empty --parents $(TMP)/usr/share/perl5
 	install -d $(TMP)/usr/share/lintian/overrides
 	cp debian/lintian-overrides $(TMP)/usr/share/lintian/overrides/libalien-wxwidgets-perl
