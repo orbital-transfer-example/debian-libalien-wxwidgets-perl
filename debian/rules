@@ -57,9 +57,8 @@ install-stamp:
 	dh_clean -k
 
 	# Add commands to install the package into debian/$PACKAGE_NAME here
-	$(PERL) Build install destdir=$(TMP)
+	$(PERL) Build install destdir=$(TMP) create_packlist=0
 
-	find $(TMP) -type f -name .packlist | xargs rm -f
 	rmdir --ignore-fail-on-non-empty --parents $(TMP)/usr/lib/perl5/auto/Alien/wxWidgets/
 	rmdir --ignore-fail-on-non-empty --parents $(TMP)/usr/share/perl5
 	install -d $(TMP)/usr/share/lintian/overrides
