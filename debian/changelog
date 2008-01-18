@@ -8,6 +8,7 @@ libalien-wxwidgets-perl (0.32-3) UNRELEASED; urgency=low
     created
   * debian/rules: delete /usr/share/perl5 only if it exists.
   * add ${perl:Depends} to Depends:
+  * add myself to Uploaders
 
  -- Damyan Ivanov <dmn@debian.org>  Tue, 08 Jan 2008 16:58:40 +0200
 
