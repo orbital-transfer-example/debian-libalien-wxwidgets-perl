@@ -1,5 +1,9 @@
 libalien-wxwidgets-perl (0.32-3) UNRELEASED; urgency=low
 
+  [ Roberto C. Sanchez ]
+  * fill README.Debian
+
+  [ Damyan Ivanov ]
   * Move test suite to build-stamp target
   * Instead of hunting down .packlist files with find, give 'Build install' a
     create_packlist=0 parameter
