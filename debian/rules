@@ -64,7 +64,7 @@ install-stamp:
 	cp debian/lintian-overrides $(TMP)/usr/share/lintian/overrides/libalien-wxwidgets-perl
 	touch install-stamp
 
-binary-arch:
+binary-arch: build install
 	dh_testdir
 	dh_testroot
 	echo 'wx:current=$(VMAJOR).$(VMINOR).$(VPATCH)~' \
