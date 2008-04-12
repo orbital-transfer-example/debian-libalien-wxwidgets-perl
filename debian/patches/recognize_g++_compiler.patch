@@ -1,0 +1,11 @@
+--- libalien-wxwidgets-perl.orig/lib/Alien/wxWidgets/Utility.pm
++++ libalien-wxwidgets-perl/lib/Alien/wxWidgets/Utility.pm
+@@ -43,7 +43,7 @@
+ sub awx_cc_is_gcc {
+     my( $cc ) = @_;
+ 
+-    return    scalar( awx_capture( "$cc --version" ) =~ m/gcc/i ) # 3.x
++    return    scalar( awx_capture( "$cc --version" ) =~ m/g(cc|\+\+)/i ) # 3.x
+            || scalar( awx_capture( "$cc" ) =~ m/gcc/i );          # 2.95
+ }
+ 
