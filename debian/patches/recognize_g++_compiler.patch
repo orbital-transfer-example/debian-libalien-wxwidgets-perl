@@ -9,3 +9,34 @@
             || scalar( awx_capture( "$cc" ) =~ m/gcc/i );          # 2.95
  }
  
+@@ -184,7 +184,7 @@
+     # the key already identifies the configuration
+     return %args if $args{key};
+ 
+-    my $cc = $ENV{CXX} || $ENV{CC} || $Config{cc};
++    my $cc = $ENV{CXX} || $ENV{CC} || $Config{ccname};
+     my $kind = awx_compiler_kind( $cc );
+     my $version = awx_cc_abi_version( $cc );
+ 
+--- libalien-wxwidgets-perl.orig/inc/My/Build/Any_wx_config.pm
++++ libalien-wxwidgets-perl/inc/My/Build/Any_wx_config.pm
+@@ -183,7 +183,7 @@
+ 
+ sub _key {
+     my $self = shift;
+-    my $compiler = $ENV{CXX} || $Config{cc};
++    my $compiler = $ENV{CXX} || $Config{ccname};
+     my $key = $self->awx_get_name
+       ( toolkit          => $self->awx_build_toolkit,
+         version          => $self->_version_2_dec
+--- libalien-wxwidgets-perl.orig/inc/My/Build/Win32.pm
++++ libalien-wxwidgets-perl/inc/My/Build/Win32.pm
+@@ -204,7 +204,7 @@
+     return 'WinCE' if $INC{'Cross.pm'};
+ 
+     SWITCH: {
+-        local $_ = $Config{cc};
++        local $_ = $Config{ccname};
+ 
+         /^cl/i  and $package = 'Win32_MSVC'  and last SWITCH;
+         /^gcc/i and $package = 'Win32_MinGW' and last SWITCH;

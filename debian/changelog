@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.33-3) unstable; urgency=low
+
+  * More intelligent check for compiler name and version (Closes: #475776)
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Sat, 12 Apr 2008 23:31:47 -0400
+
 libalien-wxwidgets-perl (0.33-2) unstable; urgency=low
 
   * Make Alien::wxWidgets->config able to see g++ >= 4.3 (Closes: #474404)
