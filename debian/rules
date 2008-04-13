@@ -10,8 +10,6 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
-include /usr/share/quilt/quilt.make
-
 # wxWidgets version
 export V=`dpkg -s libwxgtk2.6-dev | grep ^Version |cut -f2 -d' '`
 VMAJOR:=$(shell echo $(V) |cut -f 1 -d .)
@@ -32,7 +30,7 @@ endif
 TMP     =$(CURDIR)/debian/$(PACKAGE)
 
 build: build-stamp
-build-stamp: $(QUILT_STAMPFN)
+build-stamp:
 	dh_testdir
 
 	# Add commands to compile the package here
@@ -42,7 +40,7 @@ build-stamp: $(QUILT_STAMPFN)
 
 	touch build-stamp
 
-clean: unpatch
+clean:
 	dh_testdir
 	dh_testroot
 	rm -f debian/libalien-wxwidgets-perl.substvars

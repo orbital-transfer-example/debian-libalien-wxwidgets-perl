@@ -1,3 +1,11 @@
+libalien-wxwidgets-perl (0.34-1) unstable; urgency=low
+
+  * New upstream release.
+  * recognize_g++_compiler.patch: Removed, included upstream, removed quilt
+    framework.
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Sun, 13 Apr 2008 09:15:53 -0400
+
 libalien-wxwidgets-perl (0.33-3) unstable; urgency=low
 
   * More intelligent check for compiler name and version (Closes: #475776)
