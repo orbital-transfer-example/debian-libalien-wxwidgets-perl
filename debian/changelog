@@ -1,7 +1,4 @@
-libalien-wxwidgets-perl (0.35-1) UNRELEASED; urgency=low
-
-  TODO: Fix this warning:
-  W: libalien-wxwidgets-perl: manpage-section-mismatch usr/share/man/man3/Alien::wxWidgets.3pm.gz:135 3pm != 3
+libalien-wxwidgets-perl (0.35-1) unstable; urgency=low
 
   * New upstream release.
 
