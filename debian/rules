@@ -11,7 +11,7 @@
 #export DH_VERBOSE=1
 
 # wxWidgets version
-export V=`dpkg -s libwxgtk2.6-dev | grep ^Version |cut -f2 -d' '`
+export V=`dpkg -s libwxgtk2.8-dev | grep ^Version |cut -f2 -d' '`
 VMAJOR:=$(shell echo $(V) |cut -f 1 -d .)
 VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
 VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
