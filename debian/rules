@@ -50,8 +50,8 @@ clean:
 
 	dh_clean build-stamp install-stamp
 
-install: build install-stamp
-install-stamp:
+install: install-stamp
+install-stamp: build-stamp
 	dh_testdir
 	dh_testroot
 	dh_clean -k
