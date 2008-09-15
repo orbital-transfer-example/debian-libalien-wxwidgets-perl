@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.39-1) UNRELEASED; urgency=low
+
+  * New upstream release
+
+ -- Damyan Ivanov <dmn@debian.org>  Mon, 15 Sep 2008 09:29:22 +0300
+
 libalien-wxwidgets-perl (0.37-2) experimental; urgency=low
 
   * Bump (build-)dependencies on Wx to 2.8.
