@@ -1,9 +1,10 @@
-libalien-wxwidgets-perl (0.39-1) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.39-1) unstable; urgency=low
 
   * New upstream release
   * rules: fir target dependencies for parallel builds
+  * upload to unstable
 
- -- Damyan Ivanov <dmn@debian.org>  Mon, 15 Sep 2008 09:29:22 +0300
+ -- Damyan Ivanov <dmn@debian.org>  Mon, 15 Sep 2008 10:01:55 +0300
 
 libalien-wxwidgets-perl (0.37-2) experimental; urgency=low
 
