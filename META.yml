@@ -1,6 +1,6 @@
 ---
 name: Alien-wxWidgets
-version: 0.39
+version: 0.41
 author:
   - 'Mattia Barbon <mbarbon@cpan.org>'
 abstract: 'building, finding and using wxWidgets binaries'
@@ -15,10 +15,10 @@ build_requires:
 provides:
   Alien::wxWidgets:
     file: lib/Alien/wxWidgets.pm
-    version: 0.39
+    version: 0.41
   Alien::wxWidgets::Utility:
     file: lib/Alien/wxWidgets/Utility.pm
-generated_by: Module::Build version 0.2808
+generated_by: Module::Build version 0.3
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2
