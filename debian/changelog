@@ -1,3 +1,10 @@
+libalien-wxwidgets-perl (0.41-2) UNRELEASED; urgency=low
+
+  * debian/control: Changed: Switched Vcs-Browser field to ViewSVN
+    (source stanza).
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 16 Nov 2008 20:39:22 +0100
+
 libalien-wxwidgets-perl (0.41-1) unstable; urgency=low
 
   * New upstream release

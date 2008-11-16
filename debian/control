@@ -10,7 +10,7 @@ Build-Depends: debhelper (>= 5), libmodule-build-perl,
 Standards-Version: 3.8.0
 Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
 Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libalien-wxwidgets-perl/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-perl/trunk/libalien-wxwidgets-perl/
+Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libalien-wxwidgets-perl/
 
 Package: libalien-wxwidgets-perl
 Architecture: any
