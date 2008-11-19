@@ -6,7 +6,7 @@ Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
  Damyan Ivanov <dmn@debian.org>
 Build-Depends: debhelper (>= 5), libmodule-build-perl,
  libmodule-pluggable-perl, libwxgtk2.8-dev, libtest-pod-perl,
- libtest-pod-coverage-perl
+ libtest-pod-coverage-perl, libextutils-cbuilder-perl (>= 0.24)
 Standards-Version: 3.8.0
 Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
 Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libalien-wxwidgets-perl/
