@@ -25,8 +25,11 @@ my $build = $class->new
     requires        => { perl                             => '5.006',
                          'Module::Pluggable'              => '2.6',
                         },
-    build_requires  => { 'Module::Build'                  => '0.26',
+    build_requires  => { 'Module::Build'                  => '0.28',
+                         'ExtUtils::CBuilder'             => '0.24',
                          },
+    configure_requires => { 'Module::Build'               => '0.28',
+                            },
     get_options     => { debug      => { type => '!' },
                          unicode    => { type => '!' },
                          mslu       => { type => '!' },
@@ -43,14 +46,31 @@ my $build = $class->new
 
 my $build_wx_dflt = 'yes';
 my $build_wx_opengl_dflt = 'yes';
+my $build_prompt = 'Do you want to fetch and build wxWidgets from sources?';
 if( $^O eq 'MSWin32' && ( $ENV{WXWIN} || $ENV{WXDIR} ) ) {
     $build_wx_dflt = 'no';
+    $build_prompt = sprintf <<EOP, ( $ENV{WXWIN} || $ENV{WXDIR} );
+A wxWidgets build seems to be in '%s', so it should be safe to answer
+'no' to the following question
+
+$build_prompt
+EOP
 } else {
     require My::Build::Base;
     my $wx_config = My::Build::Base->awx_path_search( 'wx-config' );
     if( $wx_config ) {
         my $ans = `wx-config --version`;
-        $build_wx_dflt = 'no' if $ans =~ /^2\./;
+        if( $ans =~ /^2\./ ) {
+            my $prefix = `wx-config --prefix`;
+            chomp foreach $ans, $prefix;
+            $build_wx_dflt = 'no' ;
+            $build_prompt = sprintf <<EOP, $ans, $prefix;
+wxWidgets %s seems to be installed in '%s', so it should be safe to
+answer 'no' to the following question:
+
+$build_prompt
+EOP
+        }
     }
 }
 if( $^O ne 'darwin' && $^O ne 'MSWin32' ) {
@@ -71,13 +91,20 @@ EOT
         }
     }
 }
+chomp $build_prompt;
 my $build_wx = _askyn( $build, 'build_wx',
-                       'Do you want to build wxWidgets?', $build_wx_dflt );
+                       $build_prompt, $build_wx_dflt );
 $build->notes( 'build_wx' => $build_wx );
 $build->notes( 'mk_portable' => $build->args('mk_portable') );
 if( $build_wx ) {
     $TYPE = _ask( $build, 'source', 'Which archive type?', 'tar.gz' );
     $build->notes( 'build_data' => do 'patches/data' );
+}
+if( $build_wx ) {
+    my $build_wx_unicode = _askyn( $build, 'unicode',
+                                   'Do you want to enable Unicode support',
+                                   'yes' );
+    $build->notes( 'build_wx_unicode' => $build_wx_unicode );
 }
 if( $build_wx ) {
     my $build_wx_opengl = _askyn( $build, 'build_wx_opengl',
