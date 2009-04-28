@@ -1,7 +1,7 @@
 This package was debianized by Roberto C. Sanchez <roberto@connexer.com> on
 Fri,  4 Jan 2008 10:38:49 -0500.
 
-It was downloaded from http://search.cpan.org/~mbarbon/Alien-wxWidgets-0.32/lib/Alien/wxWidgets.pm
+It was downloaded from http://search.cpan.org/dist/Alien-wxWidgets/
 
 Upstream Author: Mattia Barbon <mbarbon@cpan.org>
 
@@ -22,8 +22,8 @@ On Debian systems, the complete text of the GNU General Public License can be
 found in `/usr/share/common-licenses/GPL' and the Artistic Licence in
 `/usr/share/common-licenses/Artistic'.
 
-The Debian packaging is (C) 2008, Roberto C. Sanchez <roberto@connexer.com> and
-is licensed under the GPL version 2 or later.
+The Debian packaging is Copyright (C) 2008, Roberto C. Sanchez
+<roberto@connexer.com> and is licensed under the GPL version 2 or later.
 
 Additional license for specific parts of this module follow below:
 
