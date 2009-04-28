@@ -1,8 +1,6 @@
-libalien-wxwidgets-perl (0.42-2) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.42+dfsg-1) UNRELEASED; urgency=low
 
-    TODO: repack upsteram removing inc/src (has files without a license) and
-          inc/patch.exe (becomes source-less); chain the repackaging script in
-          debian/watch, add README.source documenting the repackaging, mention
+    TODO: add README.source documenting the repackaging, mention
           it in debian/copyright
 
   * drop version from libextutils-cbuilder-perl. The version provided by
@@ -15,8 +13,12 @@ libalien-wxwidgets-perl (0.42-2) UNRELEASED; urgency=low
     + add "Copyright" in addition to "(C)" in debian/* part
     + complete copyright/licensing information for all files in inc/
   * watch: do not limit upstream source location to its current author
+  * add debian/repack.sh for repackaging upstream sources
+    + this is due to unlicensed source files in inc/src as well as the
+      resulting inc/bin/patch.exe
+    + hook debian/repack.sh to debian/watch
 
- -- Damyan Ivanov <dmn@debian.org>  Tue, 28 Apr 2009 10:08:07 +0300
+ -- Damyan Ivanov <dmn@debian.org>  Tue, 28 Apr 2009 22:50:13 +0300
 
 libalien-wxwidgets-perl (0.42-1) unstable; urgency=low
 

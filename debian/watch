@@ -7,5 +7,7 @@
 version=3
 
 # <Webpage URL> <string match>
-http://search.cpan.org/dist/Alien-wxWidgets/ .*/Alien-wxWidgets-(.*)\.tar\.gz
+opts=dversionmangle=s/+dfsg[.\d]*// \
+http://search.cpan.org/dist/Alien-wxWidgets/ .*/Alien-wxWidgets-(.*)\.tar\.gz \
+     debian sh debian/repack.sh
 
