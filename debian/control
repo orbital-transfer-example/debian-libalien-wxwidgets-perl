@@ -16,5 +16,6 @@ Package: libalien-wxwidgets-perl
 Architecture: any
 Depends: libmodule-pluggable-perl, ${misc:Depends}, libwxgtk2.8-dev (>= ${wx:current}), libwxgtk2.8-dev (<< ${wx:next}), ${perl:Depends}
 Description: building, finding and using wxWidgets binaries
- Detects configuration settings of an installed wxWidgets.  Can be used in
- order to help in the process of building modules which require wxWidgets.
+ Alien::WxWidgets detects configuration settings of an installed wxWidgets. It
+ can be used in order to help in the process of building modules which require
+ wxWidgets.
