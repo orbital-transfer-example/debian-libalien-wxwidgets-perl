@@ -3,6 +3,7 @@ libalien-wxwidgets-perl (0.42-2) UNRELEASED; urgency=low
   * drop version from libextutils-cbuilder-perl. The version provided by
     perl-modules is sufficient.
     (see http://lists.debian.org/debian-perl/2009/04/msg00072.html)
+  * Standards-Version: 3.8.1 (no changes needed)
 
  -- Damyan Ivanov <dmn@debian.org>  Tue, 28 Apr 2009 10:08:07 +0300
 
