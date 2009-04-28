@@ -91,4 +91,8 @@ source diff:
 	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
 
 binary: binary-indep binary-arch
-.PHONY: build clean binary-indep binary-arch binary
+
+get-orig-source:
+	uscan -f
+
+.PHONY: build clean binary-indep binary-arch binary get-orig-source

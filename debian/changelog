@@ -17,6 +17,7 @@ libalien-wxwidgets-perl (0.42+dfsg-1) UNRELEASED; urgency=low
     + this is due to unlicensed source files in inc/src as well as the
       resulting inc/bin/patch.exe
     + hook debian/repack.sh to debian/watch
+    + rules: provide a get-orig-source target
 
  -- Damyan Ivanov <dmn@debian.org>  Tue, 28 Apr 2009 22:50:13 +0300
 
