@@ -31,7 +31,8 @@ Alien::wxWidgets
 
     Copyright (c) 2005, 2006 Mattia Barbon <mbarbon@cpan.org>
 
-    This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself
 
 inc/bin/patch
 
@@ -39,31 +40,103 @@ inc/bin/patch
 
     Copyright (c) 1999 Moogle Stuffy Software <tgy@chocobo.org>
 
-    You may play with this software in accordance with the Perl Artistic License.
+    You may play with this software in accordance with the Perl Artistic
+    License.
 
-    You may use this documentation under the auspices of the GNU General Public License.
+    You may use this documentation under the auspices of the GNU General Public
+    License.
 
-inc/bin/patch.exe
+inc/Archive/Extract.pm
+    This module by Jos Boumans E<lt>kane@cpan.orgE<gt>.
 
-    was downloaded from http://gnuwin32.sourceforge.net/packages/patch.htm ad is copyrighted by its authors.
+    This library is free software; you may redistribute and/or modify it
+    under the same terms as Perl itself.
 
-    This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+inc/File/Spec/Unix.pm
+    Copyright (c) 2004 by the Perl 5 Porters.  All rights reserved.
 
-    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
 
-    You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
+inc/File/Fetch.pm
+    This module is copyright (c) 2003-2007 Jos Boumans <kane@cpan.org>. All
+    rights reserved.
 
-bundled files from CPAN
+    This library is free software; you may redistribute and/or modify it
+    under the same terms as Perl itself.
 
-        inc/File/Fetch/Item.pm
-        inc/File/Fetch.pm
-        inc/File/Spec/Unix.pm
-        inc/IPC/Cmd.pm
-        inc/Locale/Maketext/Simple.pm
-        inc/Module/Load/Conditional.pm
-        inc/Module/Load.pm
-        inc/Params/Check.pm
-        inc/Archive/Extract.pm
+inc/IPC/Cmd.pm
+    This module is copyright (c) 2002 - 2006 Jos Boumans <kane@cpan.org>.
+    All rights reserved.
 
-    Are copyright their respective authors an can be used according to the license specified in their CPAN distributions.
+    This library is free software; you may redistribute and/or modify it
+    under the same terms as Perl itself.
 
+inc/Locale/Maketext/Simple.pm
+    Copyright 2003, 2004, 2005, 2006 by Audrey Tang <cpan@audreyt.org>.
+
+    This software is released under the MIT license cited below.
+    Additionally, when this software is distributed with Perl Kit, Version
+    5, you may also redistribute it and/or modify it under the same terms
+    as Perl itself.
+
+    == The "MIT" License ==
+
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+inc/Module/Load/Conditional.pm
+inc/Module/Load.pm
+    This module is copyright (c) 2002-2007 Jos Boumans <kane@cpan.org>.
+    All rights reserved.
+
+    This library is free software; you may redistribute and/or modify it
+    under the same terms as Perl itself.
+
+inc/Params/Check.pm
+    This module is copyright (c) 2003,2004 Jos Boumans <kane@cpan.org>.
+    All rights reserved.
+
+    This library is free software; you may redistribute and/or modify it
+    under the same terms as Perl itself.
+
+inc/Text/Patch.pm
+    (taken from upstream site,
+    http://cpansearch.perl.org/src/CADE/Text-Patch-1.4/README)
+
+    COPYRIGHT AND LICENCE
+
+    See `COPYING' file for full GPL license text.
+
+    Copyright (C) 2004 Vladi Belperchinov-Shabanski
+
+    The said 'COPYING' file is a copy of GPL-2. On Debian systems it can be
+    found in /usr/share/common-licenses/GPL-2
+
+inc/bin/patch
+    Copyright (c) 1999 Moogle Stuffy Software.  All rights reserved.
+
+    You may play with this software in accordance with the Perl Artistic
+    License.
+
+    You may use this documentation under the auspices of the GNU General
+    Public License.
+
+inc/version*
+    Looks like an older local copy of version.pm found in Perl 5.10
