@@ -1,4 +1,4 @@
-libalien-wxwidgets-perl (0.42+dfsg-1) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.42+dfsg-1) unstable; urgency=low
 
   * drop version from libextutils-cbuilder-perl. The version provided by
     perl-modules is sufficient.
@@ -18,7 +18,7 @@ libalien-wxwidgets-perl (0.42+dfsg-1) UNRELEASED; urgency=low
   * add README.source documenting repackaging, mention it in debian/copyright
     too
 
- -- Damyan Ivanov <dmn@debian.org>  Tue, 28 Apr 2009 22:50:13 +0300
+ -- Damyan Ivanov <dmn@debian.org>  Wed, 29 Apr 2009 23:22:05 +0300
 
 libalien-wxwidgets-perl (0.42-1) unstable; urgency=low
 
