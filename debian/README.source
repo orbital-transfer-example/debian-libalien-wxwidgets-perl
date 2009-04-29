@@ -1,0 +1,6 @@
+Upstream sources are repackaged
+===============================
+
+debian/repack.sh script is provided to automate the repackaging. The most
+convenient way is to run `uscan --force', which will download the upstream
+.tar.gz and pass it to debian/repack.sh

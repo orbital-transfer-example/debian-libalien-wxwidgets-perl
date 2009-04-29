@@ -1,8 +1,5 @@
 libalien-wxwidgets-perl (0.42+dfsg-1) UNRELEASED; urgency=low
 
-    TODO: add README.source documenting the repackaging, mention
-          it in debian/copyright
-
   * drop version from libextutils-cbuilder-perl. The version provided by
     perl-modules is sufficient.
     (see http://lists.debian.org/debian-perl/2009/04/msg00072.html)
@@ -18,6 +15,8 @@ libalien-wxwidgets-perl (0.42+dfsg-1) UNRELEASED; urgency=low
       resulting inc/bin/patch.exe
     + hook debian/repack.sh to debian/watch
     + rules: provide a get-orig-source target
+  * add README.source documenting repackaging, mention it in debian/copyright
+    too
 
  -- Damyan Ivanov <dmn@debian.org>  Tue, 28 Apr 2009 22:50:13 +0300
 

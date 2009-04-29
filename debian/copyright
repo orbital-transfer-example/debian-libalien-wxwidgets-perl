@@ -3,6 +3,25 @@ Fri,  4 Jan 2008 10:38:49 -0500.
 
 It was downloaded from http://search.cpan.org/dist/Alien-wxWidgets/
 
+
+**********************************************
+Upstream sources are repackaged
+
+Since upstream-provided tarball contains files without license, it has to be
+repackaged. The following items are removed:
+
+o inc/src/
+  contains files without a license
+
+o inc/bin/patch.exe
+  supposedly the result of compiling the above sources. removed as it becomes
+  sourceless after inc/src removal
+
+In order to repplay the repackaging, debian/repack.sh can be provided. Easiest
+to jsut rin `uscan --force', which will download the tarball from upstream and
+give it to debian/repack.sh
+**********************************************
+
 Upstream Author: Mattia Barbon <mbarbon@cpan.org>
 
 Copyright: (c) 2005-2006, Mattia Barbon <mbarbon@cpan.org>
@@ -140,3 +159,16 @@ inc/bin/patch
 
 inc/version*
     Looks like an older local copy of version.pm found in Perl 5.10
+
+    This program is free software; you can redistribute it and/or modify it
+    under the terms of either:
+
+       a) the GNU General Public License as published by the Free Software
+          Foundation; either version 1, or (at your option) any later
+          version, or
+
+       b) the "Artistic License" which comes with Perl.
+
+    On Debian systems, the complete text of the GNU General Public License can
+    be found in `/usr/share/common-licenses/GPL' and the Artistic Licence in
+    `/usr/share/common-licenses/Artistic'.
