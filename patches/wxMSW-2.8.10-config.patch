@@ -5,8 +5,8 @@ diff -r -u build/msw/config.gcc build/msw/config.gcc
  USE_RICHTEXT := 1
  
  # Build OpenGL canvas library (USE_GUI must be 1)? [0,1]
--USE_OPENGL := 0
-+USE_OPENGL := 1
+-USE_OPENGL ?= 0
++USE_OPENGL ?= 1
  
  # Build ODBC database classes (USE_GUI must be 1)? [0,1]
  USE_ODBC := 0
