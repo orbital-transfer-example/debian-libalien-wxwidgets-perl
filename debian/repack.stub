@@ -56,6 +56,10 @@ defaults to 0, set to 1 to turn on.
 
 this will manipulate MANIFEST files in CPAN tarballs.
 
+=item UP_BASE
+
+this is the directory where the upstream source is.
+
 =back
 
 =cut
