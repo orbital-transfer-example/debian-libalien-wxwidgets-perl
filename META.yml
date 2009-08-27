@@ -1,27 +1,27 @@
 ---
 name: Alien-wxWidgets
-version: 0.43
+version: 0.44
 author:
   - 'Mattia Barbon <mbarbon@cpan.org>'
 abstract: 'building, finding and using wxWidgets binaries'
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
-configure_requires:
+build_requires:
+  ExtUtils::CBuilder: 0.24
   Module::Build: 0.28
 requires:
   Module::Pluggable: 2.6
   perl: 5.006
-build_requires:
-  ExtUtils::CBuilder: 0.24
+configure_requires:
   Module::Build: 0.28
 provides:
   Alien::wxWidgets:
     file: lib/Alien/wxWidgets.pm
-    version: 0.43
+    version: 0.44
   Alien::wxWidgets::Utility:
     file: lib/Alien/wxWidgets/Utility.pm
-generated_by: Module::Build version 0.32
+generated_by: Module::Build version 0.34
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4

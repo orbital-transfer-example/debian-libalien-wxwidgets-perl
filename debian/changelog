@@ -1,11 +1,10 @@
-libalien-wxwidgets-perl (0.43+dfsg-1) UNRELEASED; urgency=low
-
-  Build system fixes only, does not affect Debian afaict
-  IGNORE-VERSION: 0.43+dfsg-1
+libalien-wxwidgets-perl (0.44+dfsg-1) UNRELEASED; urgency=low
 
   * New upstream release
+    + Rename command-line options to avoid clashing with
+      Module::Build options
 
- -- Jonathan Yu <frequency@cpan.org>  Wed, 05 Aug 2009 06:57:33 -0400
+ -- Jonathan Yu <frequency@cpan.org>  Thu, 27 Aug 2009 15:18:02 -0400
 
 libalien-wxwidgets-perl (0.42+dfsg-1) unstable; urgency=low
 
