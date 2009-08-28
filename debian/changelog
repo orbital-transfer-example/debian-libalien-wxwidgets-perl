@@ -12,7 +12,10 @@ libalien-wxwidgets-perl (0.44+dfsg-1) UNRELEASED; urgency=low
   [ Ryan Niebur ]
   * debhelper 7
 
- -- Ryan Niebur <ryanryan52@gmail.com>  Thu, 27 Aug 2009 18:31:07 -0700
+  [ Roberto C. Sanchez ]
+  * Tighten up Build-Depends on debhelper since debian/rules uses overrides
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Fri, 28 Aug 2009 16:51:14 -0400
 
 libalien-wxwidgets-perl (0.42+dfsg-1) unstable; urgency=low
 
