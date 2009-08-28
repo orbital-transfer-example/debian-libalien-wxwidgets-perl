@@ -1,21 +1,22 @@
 Source: libalien-wxwidgets-perl
 Section: perl
 Priority: optional
-Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
-Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
- Damyan Ivanov <dmn@debian.org>
-Build-Depends: debhelper (>= 5), libmodule-build-perl,
+Build-Depends: debhelper (>= 7), perl-modules (>= 5.10) | libmodule-build-perl,
  libmodule-pluggable-perl, libwxgtk2.8-dev, libtest-pod-perl,
  libtest-pod-coverage-perl, libextutils-cbuilder-perl
-Standards-Version: 3.8.1
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
+ Damyan Ivanov <dmn@debian.org>, Jonathan Yu <frequency@cpan.org>
+Standards-Version: 3.8.3
 Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
 Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libalien-wxwidgets-perl/
 Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libalien-wxwidgets-perl/
 
 Package: libalien-wxwidgets-perl
 Architecture: any
-Depends: libmodule-pluggable-perl, ${misc:Depends}, libwxgtk2.8-dev (>= ${wx:current}), libwxgtk2.8-dev (<< ${wx:next}), ${perl:Depends}
-Description: building, finding and using wxWidgets binaries
+Depends: ${perl:Depends}, ${misc:Depends}, libwxgtk2.8-dev (>= ${wx:current}),
+ libwxgtk2.8-dev (<< ${wx:next}), libmodule-pluggable-perl
+Description: Perl module for locating wxWidgets binaries
  Alien::WxWidgets detects configuration settings of an installed wxWidgets. It
  can be used in order to help in the process of building modules which require
  wxWidgets.
