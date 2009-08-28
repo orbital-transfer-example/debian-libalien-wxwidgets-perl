@@ -1,14 +1,4 @@
 #!/usr/bin/make -f
-# This debian/rules file is provided as a template for normal perl
-# packages. It was created by Marc Brockschmidt <marc@dch-faq.de> for
-# the Debian Perl Group (http://pkg-perl.alioth.debian.org/) but may
-# be used freely wherever it is useful.
-#
-# It was later modified by Jason Kohles <email@jasonkohles.com>
-# http://www.jasonkohles.com/ to support Module::Build installed modules
-
-# Uncomment this to turn on verbose mode.
-#export DH_VERBOSE=1
 
 # wxWidgets version
 export V=`dpkg -s libwxgtk2.8-dev | grep ^Version |cut -f2 -d' '`
@@ -17,82 +7,14 @@ VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
 VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
 NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut -f 1 -d - ` + 1)
 
-# If set to a true value then MakeMaker's prompt function will
-# always return the default without waiting for user input.
-export PERL_MM_USE_DEFAULT=1
+CMD=$(subst override_,,$@)
 
-PACKAGE=$(shell dh_listpackages)
-
-ifndef PERL
-PERL = /usr/bin/perl
-endif
-
-TMP     =$(CURDIR)/debian/$(PACKAGE)
-
-build: build-stamp
-build-stamp:
-	dh_testdir
-
-	# Add commands to compile the package here
-	$(PERL) Build.PL installdirs=vendor
-	OPTIMIZE="-Wall -O2 -g" $(PERL) Build
-	$(PERL) Build test
-
-	touch build-stamp
-
-clean:
-	dh_testdir
-	dh_testroot
-	rm -f debian/libalien-wxwidgets-perl.substvars
-
-	# Add commands to clean up after the build process here
-	[ ! -f Build ] || $(PERL) Build distclean
-
-	dh_clean build-stamp install-stamp
-
-install: install-stamp
-install-stamp: build-stamp
-	dh_testdir
-	dh_testroot
-	dh_clean -k
-
-	# Add commands to install the package into debian/$PACKAGE_NAME here
-	$(PERL) Build install destdir=$(TMP) create_packlist=0
-
-	[ ! -d $(TMP)/usr/share/perl5 ] || rmdir --ignore-fail-on-non-empty --parents --verbose $(TMP)/usr/share/perl5
-	install -d $(TMP)/usr/share/lintian/overrides
-	cp debian/libalien-wxwidgets-perl.lintian-overrides $(TMP)/usr/share/lintian/overrides/libalien-wxwidgets-perl
-	touch install-stamp
-
-binary-arch: build install
-	dh_testdir
-	dh_testroot
+override_dh_gencontrol:
 	echo 'wx:current=$(VMAJOR).$(VMINOR).$(VPATCH)~' \
 		>> debian/libalien-wxwidgets-perl.substvars
 	echo 'wx:next=$(VMAJOR).$(VMINOR).$(NEXTPATCH)~' \
 		>> debian/libalien-wxwidgets-perl.substvars
-	dh_installdocs
-	dh_installman
-	dh_installchangelogs Changes
-	dh_perl
-	dh_link
-	dh_strip
-	dh_compress
-	dh_fixperms
-	dh_installdeb
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+	$(CMD)
 
-binary-indep: build install
-# We have nothing to do by default.
-
-source diff:                                                                  
-	@echo >&2 'source and diff are obsolete - use dpkg-source -b'; false
-
-binary: binary-indep binary-arch
-
-get-orig-source:
-	uscan -f
-
-.PHONY: build clean binary-indep binary-arch binary get-orig-source
+%:
+	dh $@
