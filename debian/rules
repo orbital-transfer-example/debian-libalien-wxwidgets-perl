@@ -61,7 +61,7 @@ install-stamp: build-stamp
 
 	[ ! -d $(TMP)/usr/share/perl5 ] || rmdir --ignore-fail-on-non-empty --parents --verbose $(TMP)/usr/share/perl5
 	install -d $(TMP)/usr/share/lintian/overrides
-	cp debian/lintian-overrides $(TMP)/usr/share/lintian/overrides/libalien-wxwidgets-perl
+	cp debian/libalien-wxwidgets-perl.lintian-overrides $(TMP)/usr/share/lintian/overrides/libalien-wxwidgets-perl
 	touch install-stamp
 
 binary-arch: build install
