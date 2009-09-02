@@ -7,8 +7,10 @@ libalien-wxwidgets-perl (0.44+dfsg-1) UNRELEASED; urgency=low
   * Added myself to Uploaders and copyright
   * Standards-Version 3.8.3
   * Move patches -> debian/patches
-  * Move {docs,lintian-overrides} to libalien-wxwidgets-perl.XXX
+  * Move lintian-overrides to libalien-wxwidgets-perl.XXX
   * Update copyright information to machine-readable version
+  * Rewrote control file description
+  * Remove README.txt from installation, it's not useful
 
   [ Ryan Niebur ]
   * debhelper 7
