@@ -8,6 +8,7 @@ libalien-wxwidgets-perl (0.44+dfsg-1) UNRELEASED; urgency=low
   * Standards-Version 3.8.3
   * Move patches -> debian/patches
   * Move {docs,lintian-overrides} to libalien-wxwidgets-perl.XXX
+  * Update copyright information to machine-readable version
 
   [ Ryan Niebur ]
   * debhelper 7
@@ -15,7 +16,7 @@ libalien-wxwidgets-perl (0.44+dfsg-1) UNRELEASED; urgency=low
   [ Roberto C. Sanchez ]
   * Tighten up Build-Depends on debhelper since debian/rules uses overrides
 
- -- Roberto C. Sanchez <roberto@connexer.com>  Fri, 28 Aug 2009 16:51:14 -0400
+ -- Jonathan Yu <jawnsy@cpan.org>  Tue, 01 Sep 2009 17:25:59 -0400
 
 libalien-wxwidgets-perl (0.42+dfsg-1) unstable; urgency=low
 
