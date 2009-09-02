@@ -7,14 +7,12 @@ VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
 VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
 NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut -f 1 -d - ` + 1)
 
-CMD=$(subst override_,,$@)
+%:
+	dh $@
 
 override_dh_gencontrol:
 	echo 'wx:current=$(VMAJOR).$(VMINOR).$(VPATCH)~' \
 		>> debian/libalien-wxwidgets-perl.substvars
 	echo 'wx:next=$(VMAJOR).$(VMINOR).$(NEXTPATCH)~' \
 		>> debian/libalien-wxwidgets-perl.substvars
-	$(CMD)
-
-%:
-	dh $@
+	dh_gencontrol
