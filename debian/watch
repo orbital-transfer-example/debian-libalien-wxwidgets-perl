@@ -9,5 +9,5 @@ version=3
 # <Webpage URL> <string match>
 opts=dversionmangle=s/\+dfsg[.\d]*// \
 http://search.cpan.org/dist/Alien-wxWidgets/ .*/Alien-wxWidgets-(.*)\.tar\.gz \
-     debian sh debian/repack.stub
+     debian debian/repack.stub
 
