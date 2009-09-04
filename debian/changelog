@@ -6,7 +6,6 @@ libalien-wxwidgets-perl (0.44+dfsg-1) unstable; urgency=low
       Module::Build options
   * Added myself to Uploaders and copyright
   * Standards-Version 3.8.3
-  * Move patches -> debian/patches
   * Move lintian-overrides to libalien-wxwidgets-perl.XXX
   * Update copyright information to machine-readable version
   * Rewrote control file description
