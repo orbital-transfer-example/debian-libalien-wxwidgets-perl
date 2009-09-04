@@ -1,4 +1,4 @@
-libalien-wxwidgets-perl (0.44+dfsg-1) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.44+dfsg-1) unstable; urgency=low
 
   [ Jonathan Yu ]
   * New upstream release
@@ -18,7 +18,7 @@ libalien-wxwidgets-perl (0.44+dfsg-1) UNRELEASED; urgency=low
   [ Roberto C. Sanchez ]
   * Tighten up Build-Depends on debhelper since debian/rules uses overrides
 
- -- Jonathan Yu <jawnsy@cpan.org>  Tue, 01 Sep 2009 17:25:59 -0400
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 03 Sep 2009 16:04:26 -0400
 
 libalien-wxwidgets-perl (0.42+dfsg-1) unstable; urgency=low
 
