@@ -3,6 +3,12 @@ Format-Specification:
 Upstream-Maintainer: Mattia Barbon <mbarbon@cpan.org>
 Upstream-Source: http://search.cpan.org/dist/Alien-wxWidgets/
 Upstream-Name: Alien-wxWidgets
+X-Comment: Since upstream-provided tarball contains files without license, it has to be
+ repackaged. The following items are removed:
+ .
+ + inc/src/: contains files without a license
+ + inc/bin/patch.exe: supposedly the result of compiling the above sources.
+   removed as it becomes sourceless after inc/src removal
 
 Files: *
 Copyright: 2005-2009, Mattia Barbon <mbarbon@cpan.org>

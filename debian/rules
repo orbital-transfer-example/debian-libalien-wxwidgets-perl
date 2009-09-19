@@ -16,3 +16,6 @@ override_dh_gencontrol:
 	echo 'wx:next=$(VMAJOR).$(VMINOR).$(NEXTPATCH)~' \
 		>> debian/libalien-wxwidgets-perl.substvars
 	dh_gencontrol
+
+get-orig-source:
+       uscan -f
