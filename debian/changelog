@@ -3,7 +3,7 @@ libalien-wxwidgets-perl (0.44+dfsg-1) unstable; urgency=low
   [ Jonathan Yu ]
   * New upstream release
     + Rename command-line options to avoid clashing with
-      Module::Build options
+      Module::Build options (closes: #546225)
   * Added myself to Uploaders and copyright
   * Standards-Version 3.8.3
   * Move lintian-overrides to libalien-wxwidgets-perl.XXX
