@@ -1,9 +1,9 @@
 Source: libalien-wxwidgets-perl
 Section: perl
 Priority: optional
-Build-Depends: debhelper (>= 7.0.50~), perl-modules (>= 5.10) | libmodule-build-perl,
- libmodule-pluggable-perl, libwxgtk2.8-dev, libextutils-cbuilder-perl (>= 0.24),
- libtest-pod-perl, libtest-pod-coverage-perl
+Build-Depends: debhelper (>= 7.0.50~), perl-modules (>= 5.10.1),
+ libmodule-pluggable-perl, libwxgtk2.8-dev, libtest-pod-perl,
+ libtest-pod-coverage-perl
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
  Damyan Ivanov <dmn@debian.org>, Jonathan Yu <jawnsy@cpan.org>
