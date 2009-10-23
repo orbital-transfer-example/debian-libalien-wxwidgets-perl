@@ -1,9 +1,14 @@
 libalien-wxwidgets-perl (0.44+dfsg-2) UNRELEASED; urgency=low
 
+  [ Roberto C. Sanchez ]
   * Tighten up Build-Depends:
     + change 'perl-modules (>= 5.10) | libmodule-build-perl,
       libextutils-cbuilder-perl' to 'perl-modules (>= 5.10.1)' since
       libalien-wxwidgets-perl now requires ExtUtils::CBuilder: 0.24
+
+  [ gregor herrmann ]
+  * debian/control: Changed: (build-)depend on perl instead of perl-
+    modules.
 
  -- Roberto C. Sanchez <roberto@connexer.com>  Sat, 26 Sep 2009 23:45:57 -0400
 
