@@ -1,4 +1,10 @@
-libalien-wxwidgets-perl (0.44+dfsg-2) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.45+dfsg-1) UNRELEASED; urgency=low
+
+  NO RELEASE NECESSARY. Fixes for MacOS
+  IGNORE-VERSION: 0.45+dfsg-1
+
+  [ Jonathan Yu ]
+  * New upstream release
 
   [ Roberto C. Sanchez ]
   * Tighten up Build-Depends:
@@ -10,7 +16,7 @@ libalien-wxwidgets-perl (0.44+dfsg-2) UNRELEASED; urgency=low
   * debian/control: Changed: (build-)depend on perl instead of perl-
     modules.
 
- -- Roberto C. Sanchez <roberto@connexer.com>  Sat, 26 Sep 2009 23:45:57 -0400
+ -- Jonathan Yu <jawnsy@cpan.org>  Sat, 31 Oct 2009 19:04:46 -0400
 
 libalien-wxwidgets-perl (0.44+dfsg-1) unstable; urgency=low
 
