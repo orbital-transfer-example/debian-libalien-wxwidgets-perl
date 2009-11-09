@@ -1,8 +1,4 @@
-libalien-wxwidgets-perl (0.46+dfsg-1) UNRELEASED; urgency=low
-
-  NO RELEASE NECESSARY
-  This version adds support for wxWidgets 0.29 (not in Debian)
-  IGNORE-VERSION: 0.45+dfsg-1
+libalien-wxwidgets-perl (0.46+dfsg-1) unstable; urgency=low
 
   [ Jonathan Yu ]
   * New upstream release
@@ -17,7 +13,7 @@ libalien-wxwidgets-perl (0.46+dfsg-1) UNRELEASED; urgency=low
   * debian/control: Changed: (build-)depend on perl instead of perl-
     modules.
 
- -- Jonathan Yu <jawnsy@cpan.org>  Sun, 08 Nov 2009 16:01:40 -0500
+ -- Jonathan Yu <jawnsy@cpan.org>  Sun, 08 Nov 2009 16:23:57 -0500
 
 libalien-wxwidgets-perl (0.44+dfsg-1) unstable; urgency=low
 
