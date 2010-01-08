@@ -15,6 +15,9 @@ sub _init {
     $initialized = 1;
 
     return if Module::Build->current->notes( 'build_wx' );
+    # install_only is set when a wxWidgets build is already configured
+    # with Alien::wxWidgets
+    return if Module::Build->current->notes( 'install_only' );
 
     # check for WXDIR and WXWIN environment variables
     unless( exists $ENV{WXDIR} or exists $ENV{WXWIN} ) {
@@ -218,13 +221,7 @@ sub awx_get_package {
         die "Your compiler is not currently supported on Win32"
     };
 
-    if( Module::Build->current->notes( 'build_wx' ) ) {
-        return $package . '_Bakefile';
-    } else {
-        my $mak_env_in =
-          File::Spec->catfile( $ENV{WXDIR}, 'src', 'make.env.in' );
-        return -f $mak_env_in ? $package . '_Tmake' : $package . '_Bakefile';
-    }
+    return $package . '_Bakefile';
 }
 
 # MSLU is default when using Unicode *and* it has not

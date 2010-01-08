@@ -1,3 +1,12 @@
+libalien-wxwidgets-perl (0.48+dfsg-1) UNRELEASED; urgency=low
+
+  Nothing seems to affect us
+  IGNORE-VERSION: 0.48+dfsg-1
+
+  * New upstream release
+
+ -- Jonathan Yu <jawnsy@cpan.org>  Thu, 07 Jan 2010 21:24:54 -0500
+
 libalien-wxwidgets-perl (0.46+dfsg-1) unstable; urgency=low
 
   [ Jonathan Yu ]

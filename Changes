@@ -1,5 +1,22 @@
 Revision history for Perl extension Alien::wxWidgets.
 
+0.48  Fri Dec 25 18:23:56 CET 2009
+	- Fix the compiler check for Visual C++.
+
+0.47  Sat Dec  5 16:16:05 CET 2009
+	- Released 0.46_01 as 0.47.
+
+0.46_01  Tue Nov 24 20:34:25 CET 2009
+	- Do not give a warning when installed using WiX
+	  (patch by Curtis Jewell).
+	- Tentative patch to correctly detect wxWidgets under OpenBSD,
+	  based on RT ticket 41678.
+	- Under Solaris, use GNU Make to build wxWidgets, and fail if it
+	  is not present or can't be detected.
+	- Detect wxWidgets versions that have been installed using
+	  Alien::wxWidgets itself and avoid needlessly recompiling/reinstalling
+	  it.
+
 0.46  Sun Nov  8 16:25:02 CET 2009
 	- Allow choosing the wxWidgets version to build (defaults to
 	  the latest stable release when building from the CPAN shell).
