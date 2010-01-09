@@ -1,11 +1,13 @@
 libalien-wxwidgets-perl (0.48+dfsg-1) UNRELEASED; urgency=low
 
-  Nothing seems to affect us
-  IGNORE-VERSION: 0.48+dfsg-1
-
+  [ Jonathan Yu ]
   * New upstream release
 
- -- Jonathan Yu <jawnsy@cpan.org>  Thu, 07 Jan 2010 21:24:54 -0500
+  [ Ryan Niebur ]
+  * require wxwidgets 2.8.10.1
+  * Add myself to Uploaders
+
+ -- Ryan Niebur <ryan@debian.org>  Sat, 09 Jan 2010 10:07:38 -0800
 
 libalien-wxwidgets-perl (0.46+dfsg-1) unstable; urgency=low
 
