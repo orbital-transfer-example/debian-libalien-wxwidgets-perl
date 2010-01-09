@@ -5,9 +5,12 @@ use base qw(My::Build::Win32);
 use My::Build::Utility qw(awx_arch_file awx_install_arch_file
                           awx_install_arch_dir awx_arch_dir);
 use Config;
+use File::Basename qw();
+use File::Glob qw(bsd_glob);
 
 sub _find_make {
-    my( @try ) = qw(mingw32-make make);
+    my( @try ) = qw(mingw32-make gmake make);
+    push @try, $Config{gmake} if $Config{gmake};
 
     foreach my $name ( @try ) {
         foreach my $dir ( File::Spec->path ) {
@@ -88,8 +91,16 @@ sub awx_compiler_kind { 'gcc' }
 
 sub files_to_install {
     my $self = shift;
-    my $dll = 'mingwm10.dll';
-    my $dll_from = $self->awx_path_search( $dll );
+    my( @try ) = qw(mingwm10.dll libgcc_*.dll);
+    my( $dll, $dll_from );
+
+    foreach my $d ( @try ) {
+        $dll_from = $self->awx_path_search( $d );
+        if( defined $dll_from ) {
+            $dll = File::Basename::basename( $dll_from );
+            last;
+        }
+    }
 
     return ( $self->SUPER::files_to_install(),
              ( $dll_from => awx_arch_file( "rEpLaCe/lib/$dll" ) ) );
@@ -97,7 +108,7 @@ sub files_to_install {
 
 sub awx_strip_dlls {
     my( $self ) = @_;
-    my( $dir ) = grep !/Config/, glob( awx_arch_dir( '*' ) );
+    my( $dir ) = grep !/Config/, bsd_glob( awx_arch_dir( '*' ) );
 
     $self->_system( "attrib -r $dir\\lib\\*.dll" );
     $self->_system( "strip $dir\\lib\\*.dll" );

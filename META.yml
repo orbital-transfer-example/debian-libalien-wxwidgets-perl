@@ -1,12 +1,16 @@
 ---
 name: Alien-wxWidgets
-version: 0.48
+version: 0.49
 author:
   - 'Mattia Barbon <mbarbon@cpan.org>'
 abstract: 'building, finding and using wxWidgets binaries'
 license: perl
 resources:
+  MailingList: http://lists.perl.org/list/wxperl-users.html
+  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Alien-wxWidgets
+  homepage: http://wxperl.eu/
   license: http://dev.perl.org/licenses/
+  repository: https://wxperl.svn.sourceforge.net/svnroot/wxperl/Alien-wxWidgets
 build_requires:
   ExtUtils::CBuilder: 0.24
   Module::Build: 0.28
@@ -18,7 +22,7 @@ configure_requires:
 provides:
   Alien::wxWidgets:
     file: lib/Alien/wxWidgets.pm
-    version: 0.48
+    version: 0.49
   Alien::wxWidgets::Utility:
     file: lib/Alien/wxWidgets/Utility.pm
 generated_by: Module::Build version 0.35
