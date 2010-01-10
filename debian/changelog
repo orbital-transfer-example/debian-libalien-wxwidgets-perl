@@ -1,4 +1,4 @@
-libalien-wxwidgets-perl (0.49+dfsg-1) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.50+dfsg-1) UNRELEASED; urgency=low
 
   [ Jonathan Yu ]
   * New upstream release
@@ -8,7 +8,7 @@ libalien-wxwidgets-perl (0.49+dfsg-1) UNRELEASED; urgency=low
   * Add myself to Uploaders
   * New upstream release
 
- -- Ryan Niebur <ryan@debian.org>  Sat, 09 Jan 2010 10:10:42 -0800
+ -- Jonathan Yu <jawnsy@cpan.org>  Sun, 10 Jan 2010 11:45:42 -0500
 
 libalien-wxwidgets-perl (0.46+dfsg-1) unstable; urgency=low
 
