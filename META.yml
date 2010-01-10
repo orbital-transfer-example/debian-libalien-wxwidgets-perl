@@ -1,6 +1,6 @@
 ---
 name: Alien-wxWidgets
-version: 0.49
+version: 0.50
 author:
   - 'Mattia Barbon <mbarbon@cpan.org>'
 abstract: 'building, finding and using wxWidgets binaries'
@@ -22,7 +22,7 @@ configure_requires:
 provides:
   Alien::wxWidgets:
     file: lib/Alien/wxWidgets.pm
-    version: 0.49
+    version: 0.50
   Alien::wxWidgets::Utility:
     file: lib/Alien/wxWidgets/Utility.pm
 generated_by: Module::Build version 0.35
