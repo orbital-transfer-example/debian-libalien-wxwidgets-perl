@@ -1,6 +1,16 @@
+
 Upstream sources are repackaged
 ===============================
 
 debian/repack.sh script is provided to automate the repackaging. The most
 convenient way is to run `uscan --force', which will download the upstream
 .tar.gz and pass it to debian/repack.sh
+
+Patches
+=======
+
+This package uses quilt to manage all modifications to the upstream
+source.  Changes are stored in the source package as diffs in
+debian/patches and applied during the build.
+ 
+See /usr/share/doc/quilt/README.source for a detailed explanation.

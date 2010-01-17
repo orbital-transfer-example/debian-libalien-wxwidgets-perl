@@ -8,7 +8,7 @@ VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
 NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut -f 1 -d - ` + 1)
 
 %:
-	dh $@
+	dh --with quilt $@
 
 override_dh_gencontrol:
 	echo 'wx:current=$(VMAJOR).$(VMINOR).$(VPATCH)~' \
@@ -16,6 +16,3 @@ override_dh_gencontrol:
 	echo 'wx:next=$(VMAJOR).$(VMINOR).$(NEXTPATCH)~' \
 		>> debian/libalien-wxwidgets-perl.substvars
 	dh_gencontrol
-
-get-orig-source:
-	uscan -f

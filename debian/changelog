@@ -2,13 +2,14 @@ libalien-wxwidgets-perl (0.50+dfsg-1) UNRELEASED; urgency=low
 
   [ Jonathan Yu ]
   * New upstream release
+  * Add a patch to fix POD spelling
 
   [ Ryan Niebur ]
   * require wxwidgets 2.8.10.1
   * Add myself to Uploaders
   * New upstream release
 
- -- Jonathan Yu <jawnsy@cpan.org>  Sun, 10 Jan 2010 11:45:42 -0500
+ -- Jonathan Yu <jawnsy@cpan.org>  Sun, 17 Jan 2010 16:11:28 -0500
 
 libalien-wxwidgets-perl (0.46+dfsg-1) unstable; urgency=low
 
