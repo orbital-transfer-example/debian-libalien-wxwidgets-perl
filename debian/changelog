@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.50+dfsg-2) UNRELEASED; urgency=low
+
+  * debian/rules: switch order of arguments to dh.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 28 Jul 2010 14:32:08 -0400
+
 libalien-wxwidgets-perl (0.50+dfsg-1) unstable; urgency=low
 
   [ Jonathan Yu ]

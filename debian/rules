@@ -8,7 +8,7 @@ VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
 NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut -f 1 -d - ` + 1)
 
 %:
-	dh --with quilt $@
+	dh $@ --with quilt
 
 override_dh_gencontrol:
 	echo 'wx:current=$(VMAJOR).$(VMINOR).$(VPATCH)~' \
