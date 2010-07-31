@@ -4,11 +4,17 @@ libalien-wxwidgets-perl (0.51+dfsg-1) UNRELEASED; urgency=low
   * New upstream release
   * Clean up debian watch.
   * Added /me to Uploaders (Refreshed d.control and d.copyright accordingly).
+  * Switch to dpkg-source 3.0 (quilt) format.
+    - Refreshed README.source.
+    - Dropped BD on quilt.
+    - Removed --with quilt option.
+  * Refreshed d.copyright to follow the latest DEP5.
+  * Bumped up Standards-Version to 3.9.1 (no changes).
 
   [ gregor herrmann ]
   * debian/rules: switch order of arguments to dh.
 
- -- Franck Joncourt <franck@debian.org>  Sat, 31 Jul 2010 17:26:53 +0200
+ -- Franck Joncourt <franck@debian.org>  Sat, 31 Jul 2010 17:35:17 +0200
 
 libalien-wxwidgets-perl (0.50+dfsg-1) unstable; urgency=low
 

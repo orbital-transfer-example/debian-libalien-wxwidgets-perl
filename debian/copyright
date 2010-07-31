@@ -1,8 +1,7 @@
-Format-Specification:
-    http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=196
-Upstream-Maintainer: Mattia Barbon <mbarbon@cpan.org>
-Upstream-Source: http://search.cpan.org/dist/Alien-wxWidgets/
-Upstream-Name: Alien-wxWidgets
+Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=135
+Maintainer: Mattia Barbon <mbarbon@cpan.org>
+Source: http://search.cpan.org/dist/Alien-wxWidgets/
+Name: Alien-wxWidgets
 X-Comment: Since upstream-provided tarball contains files without license, it has to be
  repackaged. The following items are removed:
  .
@@ -12,8 +11,7 @@ X-Comment: Since upstream-provided tarball contains files without license, it ha
 
 Files: *
 Copyright: 2005-2009, Mattia Barbon <mbarbon@cpan.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: debian/*
 Copyright: 2010, Franck Joncourt <franck@debian.org>
@@ -24,28 +22,23 @@ License: GPL-2+
 
 Files: inc/bin/patch
 Copyright: 1999, Moogle Stuffy Software <tgy@chocobo.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: inc/Archive/Extract.pm
 Copyright: 2002, Jos Boumans <kane@cpan.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: inc/File/Spec/Unix.pm
 Copyright: 2004, Perl 5 Porters. All rights reserved.
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: inc/File/Fetch.pm
 Copyright: 2003-2007, Jos Boumans <kane@cpan.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: inc/IPC/Cmd.pm
 Copyright: 2002-2006, Jos Boumans <kane@cpan.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: inc/Locale/Maketext/Simple.pm
 Copyright: 2003-2006, Audrey Tang <cpan@audreyt.org>
@@ -53,13 +46,11 @@ License: MIT
 
 Files: inc/Module/Load.pm, inc/Module/Load/Conditional.pm
 Copyright: 2002-2007, Jos Boumans <kane@cpan.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: inc/Params/Check.pm
 Copyright: 2003-2004, Jos Boumans <kane@cpan.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 Files: inc/Text/Patch.pm
 Copyright: 2004, Vladi Belperchinov-Shabanski <cade@datamax.bg>
@@ -67,8 +58,7 @@ License: GPL-2+
 
 Files: inc/version.pm, inc/version/vpp.pm
 Copyright: 2004-2009, John Peacock <jpeacock@cpan.org>
-License-Alias: Perl
-License: Artistic | GPL-1+
+License: Artistic or GPL-1+
 
 License: Artistic
     This program is free software; you can redistribute it and/or modify
@@ -82,7 +72,7 @@ License: GPL-1+
     the Free Software Foundation; either version 1, or (at your option)
     any later version.
     On Debian GNU/Linux systems, the complete text of the GNU General
-    Public License can be found in `/usr/share/common-licenses/GPL'
+    Public License can be found in `/usr/share/common-licenses/GPL-1
 
 License: GPL-2+
     This program is free software; you can redistribute it and/or modify
@@ -100,10 +90,10 @@ License: MIT
     distribute, sublicense, and/or sell copies of the Software, and to
     permit persons to whom the Software is furnished to do so, subject to
     the following conditions:
- .
+    .
     The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Software.
- .
+    .
     THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
     OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
     MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
