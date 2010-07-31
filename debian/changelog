@@ -12,6 +12,8 @@ libalien-wxwidgets-perl (0.51+dfsg-1) UNRELEASED; urgency=low
     + Follow the latest DEP5.
     + Updated path to match the new layout of files.
   * Bumped up Standards-Version to 3.9.1 (no changes).
+  * Removed (build-)dependency on libmodule-pluggable-perl. The package
+    requires at least 2.6, but perl 5.10 from stable ships 3.9.
 
   [ gregor herrmann ]
   * debian/rules: switch order of arguments to dh.
