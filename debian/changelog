@@ -5,10 +5,12 @@ libalien-wxwidgets-perl (0.51+dfsg-1) UNRELEASED; urgency=low
   * Clean up debian watch.
   * Added /me to Uploaders (Refreshed d.control and d.copyright accordingly).
   * Switch to dpkg-source 3.0 (quilt) format.
-    - Refreshed README.source.
-    - Dropped BD on quilt.
-    - Removed --with quilt option.
-  * Refreshed d.copyright to follow the latest DEP5.
+    + Refreshed README.source.
+    + Dropped BD on quilt.
+    + Removed --with quilt option.
+  * Refreshed d.copyright:
+    + Follow the latest DEP5.
+    + Updated path to match the new layout of files.
   * Bumped up Standards-Version to 3.9.1 (no changes).
 
   [ gregor herrmann ]

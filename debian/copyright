@@ -24,41 +24,33 @@ Files: inc/bin/patch
 Copyright: 1999, Moogle Stuffy Software <tgy@chocobo.org>
 License: Artistic or GPL-1+
 
-Files: inc/Archive/Extract.pm
+Files: inc/inc_Archive-Extract/Archive/Extract.pm
 Copyright: 2002, Jos Boumans <kane@cpan.org>
 License: Artistic or GPL-1+
 
-Files: inc/File/Spec/Unix.pm
-Copyright: 2004, Perl 5 Porters. All rights reserved.
-License: Artistic or GPL-1+
-
-Files: inc/File/Fetch.pm
+Files: inc/inc_File-Fetch/File/Fetch.pm
 Copyright: 2003-2007, Jos Boumans <kane@cpan.org>
 License: Artistic or GPL-1+
 
-Files: inc/IPC/Cmd.pm
+Files: inc/inc_IPC-Cmd/IPC/Cmd.pm
 Copyright: 2002-2006, Jos Boumans <kane@cpan.org>
 License: Artistic or GPL-1+
 
-Files: inc/Locale/Maketext/Simple.pm
+Files: inc/inc_Locale-Maketext-Simple/Locale/Maketext/Simple.pm
 Copyright: 2003-2006, Audrey Tang <cpan@audreyt.org>
 License: MIT
 
-Files: inc/Module/Load.pm, inc/Module/Load/Conditional.pm
+Files: inc/inc_Module-Load/Module/Load.pm, inc/inc_Module-Load-Conditional/Module/Load/Conditional.pm
 Copyright: 2002-2007, Jos Boumans <kane@cpan.org>
 License: Artistic or GPL-1+
 
-Files: inc/Params/Check.pm
+Files: inc/inc_Params-Check/Params/Check.pm
 Copyright: 2003-2004, Jos Boumans <kane@cpan.org>
 License: Artistic or GPL-1+
 
-Files: inc/Text/Patch.pm
-Copyright: 2004, Vladi Belperchinov-Shabanski <cade@datamax.bg>
-License: GPL-2+
-
-Files: inc/version.pm, inc/version/vpp.pm
-Copyright: 2004-2009, John Peacock <jpeacock@cpan.org>
-License: Artistic or GPL-1+
+#Files: inc/inc_version/version.pm, inc/inc_version/version/vpp.pm
+#Copyright: 2004-2009, John Peacock <jpeacock@cpan.org>
+#License: Artistic or GPL-1+
 
 License: Artistic
     This program is free software; you can redistribute it and/or modify
