@@ -9,6 +9,26 @@ use File::Basename ();
 use Fatal qw(open close unlink);
 use Data::Dumper;
 use File::Glob qw(bsd_glob);
+use Carp;
+
+# use the system version of a module if present; in theory this could lead to
+# compatibility problems (if the latest version of one of the dependencies,
+# installed in @INC is incompatible with the bundled version of a module)
+sub _load_bundled_modules {
+    # the load order is important: all dependencies must be loaded
+    # before trying to load a module
+    require inc::latest;
+
+    inc::latest->import( $_ )
+        foreach qw(version
+                   Locale::Maketext::Simple
+                   Params::Check
+                   Module::Load
+                   Module::Load::Conditional
+                   IPC::Cmd
+                   Archive::Extract
+                   File::Fetch);
+}
 
 sub ACTION_build {
     my $self = shift;
@@ -70,9 +90,20 @@ sub ACTION_install {
     $self->install_system_wxwidgets;
 }
 
-sub ACTION_distcheck {
-    my $self = shift;
-    my $data = $self->notes( 'build_data' );
+sub _check_data_file {
+    my( $self, $file, $manifest ) = @_;
+
+    require File::Spec::Unix;
+
+    my $data = do {
+        package main;
+        our( $TYPE, $URL );
+        local $TYPE = 'dummy';
+        local $URL = 'dummy';
+
+        do $file;
+    };
+    die "Unable to load data file '$file': $@" unless $data;
 
     foreach my $p ( qw(msw mac unix) ) {
         next unless exists $data->{$p};
@@ -82,13 +113,40 @@ sub ACTION_distcheck {
 
             foreach my $f ( @{$data->{$p}{$c}} ) {
                 my $file = File::Spec->catfile( 'patches', $f );
+                my $manifest_file = File::Spec::Unix->catfile( 'patches', $f );
 
-                warn 'Missing patch file: ', $file, "\n" unless -f $file;
+                die 'Missing patch file: ', $file, "\n" unless -f $file;
+                die 'Patch file ', $file, ' not in MANIFEST'
+                  unless exists $manifest->{$manifest_file};
             }
         }
     }
+}
+
+sub _check_data_files {
+    my( $self ) = @_;
+
+    require ExtUtils::Manifest;
+    my $files = ExtUtils::Manifest::maniread();
+
+    foreach my $data ( grep m{^patches/data}, keys %$files ) {
+        print "Checking $data\n";
+        $self->_check_data_file( $data, $files );
+    }
+}
+
+sub ACTION_distcheck {
+    my $self = shift;
 
     $self->SUPER::ACTION_distcheck;
+    $self->_check_data_files;
+}
+
+sub ACTION_dist {
+    my $self = shift;
+
+    $self->_check_data_files;
+    $self->SUPER::ACTION_dist;
 }
 
 sub awx_key {
@@ -239,7 +297,7 @@ sub fetch_wxwidgets {
     my $self = shift;
 
     return if -f $self->notes( 'build_data' )->{data}{archive};
-    require File::Fetch;
+    $self->_load_bundled_modules;
 
     print "Fetching wxWidgets...\n";
     print "fetching from: ", $self->notes( 'build_data' )->{data}{url}, "\n";
@@ -257,7 +315,7 @@ sub extract_wxwidgets {
 
     print "Extracting wxWidgets...\n";
 
-    require Archive::Extract;
+    $self->_load_bundled_modules;
     $Archive::Extract::PREFER_BIN = 1;
     my $ae = Archive::Extract->new( archive => $archive );
 
