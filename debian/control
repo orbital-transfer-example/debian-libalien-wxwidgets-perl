@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 7.0.50~), quilt (>= 0.46-7), perl (>= 5.10.1),
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
  Damyan Ivanov <dmn@debian.org>, Jonathan Yu <jawnsy@cpan.org>,
- Ryan Niebur <ryan@debian.org>
+ Ryan Niebur <ryan@debian.org>, Franck Joncourt <franck@debian.org>
 Standards-Version: 3.8.3
 Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
 Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libalien-wxwidgets-perl/
