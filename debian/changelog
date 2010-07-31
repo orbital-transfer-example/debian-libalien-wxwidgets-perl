@@ -1,14 +1,13 @@
 libalien-wxwidgets-perl (0.51+dfsg-1) UNRELEASED; urgency=low
 
+  [ Franck Joncourt ]
   * New upstream release
+  * Clean up debian watch.
 
- -- Franck Joncourt <franck@debian.org>  Sat, 31 Jul 2010 17:26:53 +0200
-
-libalien-wxwidgets-perl (0.50+dfsg-2) UNRELEASED; urgency=low
-
+  [ gregor herrmann ]
   * debian/rules: switch order of arguments to dh.
 
- -- gregor herrmann <gregoa@debian.org>  Wed, 28 Jul 2010 14:32:08 -0400
+ -- Franck Joncourt <franck@debian.org>  Sat, 31 Jul 2010 17:26:53 +0200
 
 libalien-wxwidgets-perl (0.50+dfsg-1) unstable; urgency=low
 
