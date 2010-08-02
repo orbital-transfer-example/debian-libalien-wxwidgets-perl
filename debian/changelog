@@ -1,5 +1,8 @@
 libalien-wxwidgets-perl (0.51+dfsg-1) UNRELEASED; urgency=low
 
+  TODOs:
+  + Check the licences one more time
+
   * New upstream release
   * Clean up debian watch.
   * Added /me to Uploaders (Refreshed d.control and d.copyright accordingly).
