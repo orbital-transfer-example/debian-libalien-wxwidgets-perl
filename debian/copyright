@@ -48,10 +48,6 @@ Files: inc/inc_Params-Check/Params/Check.pm
 Copyright: 2003-2004, Jos Boumans <kane@cpan.org>
 License: Artistic or GPL-1+
 
-#Files: inc/inc_version/version.pm, inc/inc_version/version/vpp.pm
-#Copyright: 2004-2009, John Peacock <jpeacock@cpan.org>
-#License: Artistic or GPL-1+
-
 License: Artistic
     This program is free software; you can redistribute it and/or modify
     it under the terms of the Artistic License, which comes with Perl.

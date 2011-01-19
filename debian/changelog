@@ -1,8 +1,6 @@
-libalien-wxwidgets-perl (0.51+dfsg-1) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.51+dfsg-1) unstable; urgency=low
 
-  TODOs:
-  + Check the licences one more time
-
+  [ Franck Joncourt ]
   * New upstream release
   * Clean up debian watch.
   * Added /me to Uploaders (Refreshed d.control and d.copyright accordingly).
@@ -17,7 +15,10 @@ libalien-wxwidgets-perl (0.51+dfsg-1) UNRELEASED; urgency=low
   * Removed (build-)dependency on libmodule-pluggable-perl. The package
     requires at least 2.6, but perl 5.10 from stable ships 3.9.
 
- -- Franck Joncourt <franck@debian.org>  Sat, 31 Jul 2010 19:54:42 +0200
+  [ Roberto C. Sanchez ]
+  * Review and update debian/copyright.
+
+ -- Roberto C. Sanchez <roberto@connexer.com>  Tue, 18 Jan 2011 20:54:15 -0500
 
 libalien-wxwidgets-perl (0.50+dfsg-1) unstable; urgency=low
 
