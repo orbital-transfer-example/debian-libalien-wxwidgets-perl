@@ -10,8 +10,8 @@ Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
  Ryan Niebur <ryan@debian.org>, Franck Joncourt <franck@debian.org>
 Standards-Version: 3.9.1
 Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
-Vcs-Svn: svn://svn.debian.org/pkg-perl/trunk/libalien-wxwidgets-perl/
-Vcs-Browser: http://svn.debian.org/viewsvn/pkg-perl/trunk/libalien-wxwidgets-perl/
+Vcs-Git: git://git.debian.org/pkg-perl/packages/libalien-wxwidgets-perl.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libalien-wxwidgets-perl.git
 
 Package: libalien-wxwidgets-perl
 Architecture: any
