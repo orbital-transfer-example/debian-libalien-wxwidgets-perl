@@ -15,13 +15,13 @@ Index: src/common/utilscmn.cpp
 ===================================================================
 --- src/common/utilscmn.cpp	(revisione 63679)
 +++ src/common/utilscmn.cpp	(copia locale)
-@@ -817,7 +817,7 @@
- 
-     ::ShellExecuteEx(&sei);
- 
+@@ -822,7 +822,7 @@
+     //hInstApp member is only valid if the function fails, in which case it
+     //receives one of the following error values, which are less than or
+     //equal to 32.
 -    const int nResult = (int) sei.hInstApp;
 +    const int nResult = (INT_PTR) sei.hInstApp;
- 
+
      // Firefox returns file not found for some reason, so make an exception
      // for it
 Index: src/msw/dcprint.cpp
@@ -371,7 +371,7 @@ Index: src/msw/printdlg.cpp
 ===================================================================
 --- src/msw/printdlg.cpp	(revisione 63679)
 +++ src/msw/printdlg.cpp	(copia locale)
-@@ -129,10 +129,10 @@
+@@ -175,10 +175,10 @@
  
  wxWindowsPrintNativeData::~wxWindowsPrintNativeData()
  {
@@ -384,7 +384,7 @@ Index: src/msw/printdlg.cpp
      if ( hDevNames )
          GlobalFree(hDevNames);
  }
-@@ -144,8 +144,8 @@
+@@ -190,8 +190,8 @@
  
  bool wxWindowsPrintNativeData::TransferTo( wxPrintData &data )
  {
@@ -395,7 +395,7 @@ Index: src/msw/printdlg.cpp
  
      if (!hDevMode)
      {
-@@ -350,25 +350,19 @@
+@@ -396,8 +396,8 @@
  
  bool wxWindowsPrintNativeData::TransferFrom( const wxPrintData &data )
  {
@@ -403,8 +403,10 @@ Index: src/msw/printdlg.cpp
 -    HGLOBAL hDevNames = (HGLOBAL)(DWORD) m_devNames;
 +    HGLOBAL hDevMode = (HGLOBAL) m_devMode;
 +    HGLOBAL hDevNames = (HGLOBAL) m_devNames;
-     if (!hDevMode)
-     {
+     WinPrinter printer;
+     LPTSTR szPrinterName = (LPTSTR)data.GetPrinterName().wx_str();
+ 
+@@ -452,18 +452,12 @@
          // Use PRINTDLG as a way of creating a DEVMODE object
          PRINTDLG pd;
  
@@ -423,7 +425,7 @@ Index: src/msw/printdlg.cpp
  
          pd.hwndOwner      = (HWND)NULL;
          pd.hDevMode       = NULL; // Will be created by PrintDlg
-@@ -398,7 +392,7 @@
+@@ -493,7 +487,7 @@
          else
          {
              hDevMode = pd.hDevMode;
@@ -432,7 +434,7 @@ Index: src/msw/printdlg.cpp
              pd.hDevMode = NULL;
  
              // We'll create a new DEVNAMEs structure below.
-@@ -568,7 +562,7 @@
+@@ -688,7 +682,7 @@
      }
  
      // TODO: I hope it's OK to pass some empty strings to DEVNAMES.
@@ -441,7 +443,7 @@ Index: src/msw/printdlg.cpp
  
      return true;
  }
-@@ -677,12 +671,8 @@
+@@ -797,12 +791,8 @@
      memset( pd, 0, sizeof(PRINTDLG) );
      m_printDlg = (void*) pd;
  
@@ -455,7 +457,7 @@ Index: src/msw/printdlg.cpp
      pd->hwndOwner      = (HWND)NULL;
      pd->hDevMode       = NULL; // Will be created by PrintDlg
      pd->hDevNames      = NULL; // Ditto
-@@ -700,13 +690,13 @@
+@@ -820,13 +810,13 @@
      if (pd->hDevNames)
          GlobalFree(pd->hDevNames);
  
@@ -471,7 +473,7 @@ Index: src/msw/printdlg.cpp
      native_data->SetDevNames( (void*) NULL);
  
  
-@@ -719,11 +709,7 @@
+@@ -839,11 +829,7 @@
  
      pd->Flags = PD_RETURNDC;
  
@@ -483,7 +485,7 @@ Index: src/msw/printdlg.cpp
  
      pd->hwndOwner=(HWND)NULL;
  //    pd->hDevNames=(HANDLE)NULL;
-@@ -777,9 +763,9 @@
+@@ -897,9 +883,9 @@
          if (native_data->GetDevMode())
          {
              // Make sure we don't leak memory
@@ -491,11 +493,11 @@ Index: src/msw/printdlg.cpp
 +            GlobalFree( (HGLOBAL) native_data->GetDevMode() );
          }
 -        native_data->SetDevMode( (void*)(long) pd->hDevMode );
-+        native_data->SetDevMode( pd->hDevMode );
++        native_data->SetDevMode( (void*) pd->hDevMode );
          pd->hDevMode = NULL;
      }
  
-@@ -789,9 +775,9 @@
+@@ -909,9 +895,9 @@
          if (native_data->GetDevNames())
          {
              // Make sure we don't leak memory
@@ -503,7 +505,7 @@ Index: src/msw/printdlg.cpp
 +            GlobalFree((HGLOBAL) native_data->GetDevNames());
          }
 -        native_data->SetDevNames((void*)(long) pd->hDevNames);
-+        native_data->SetDevNames(pd->hDevNames);
++        native_data->SetDevNames((void*) pd->hDevNames);
          pd->hDevNames = NULL;
      }
 
@@ -523,7 +525,7 @@ Index: src/msw/textctrl.cpp
 Index: include/wx/defs.h
 --- include/wx/defs.h	2009-03-06 13:10:51.000000000 +0100
 +++ include/wx/defs.h	2010-03-20 14:17:40.000000000 +0100
-@@ -823,73 +823,6 @@
+@@ -823,75 +823,6 @@
  
  typedef wxUint32 wxDword;
  
@@ -533,9 +535,11 @@ Index: include/wx/defs.h
 -#if SIZEOF_LONG >= SIZEOF_VOID_P && SIZEOF_LONG >= SIZEOF_SIZE_T
 -    /* normal case */
 -    typedef unsigned long wxUIntPtr;
+-    typedef long wxIntPtr;
 -#elif SIZEOF_SIZE_T >= SIZEOF_VOID_P
 -    /* Win64 case */
 -    typedef size_t wxUIntPtr;
+-    #define wxIntPtr ssize_t
 -#else
 -    /*
 -       This should never happen for the current architectures but if you're

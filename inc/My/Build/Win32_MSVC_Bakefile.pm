@@ -41,7 +41,7 @@ sub awx_wx_config_data {
     my $dir = Cwd::cwd;
     chdir File::Spec->catdir( $ENV{WXDIR}, 'samples', 'minimal' );
     my $extraflags = $self->notes( 'extraflags');
-    my @t = qx(nmake /nologo /n /u /f makefile.vc $final $unicode SHARED=1 $extraflags);
+    my @t = qx(nmake /nologo /n /a /u /f makefile.vc $final $unicode SHARED=1 $extraflags);
 
     my( $accu, $libdir, $digits );
     foreach ( @t ) {
@@ -70,6 +70,8 @@ sub awx_wx_config_data {
 
     chdir $dir;
     die 'Could not find wxWidgets lib directory' unless $libdir;
+
+    $self->awx_w32_find_setup_dir( $data{cxxflags} ); # for awx_grep_dlls
 
     $data{dlls} = $self->awx_grep_dlls( $orig_libdir, $digits, $self->awx_is_monolithic );
     $data{version} = $digits;

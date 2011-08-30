@@ -1,4 +1,4 @@
-my $VERSION = '2.8.11';
+my $VERSION = '2.8.12';
    $URL   ||= "http://prdownloads.sourceforge.net/wxwindows";
 my $BASE    = 'wxWidgets';
 # $TYPE from Build.PL
@@ -11,8 +11,8 @@ wxMSW-2.8.10-config.patch
 wxMSW-2.8.11-makefiles.patch
 wxMSW-2.8.10-w64-mslu.patch
 wxMSW-2.8.10-w64-winhash.patch
-wxMSW-2.8.11-w64.patch
-wxMSW-2.8.10-w64-stc.patch
+wxMSW-2.8.12-w64.patch
+wxMSW-2.8.12-w64-stc.patch
 wxMSW-2.8.11-filefn.patch
                                ), @common ],
                ansi    => [ qw(
@@ -21,9 +21,10 @@ wxMSW-2.8.10-config.patch
 wxMSW-2.8.11-makefiles.patch
 wxMSW-2.8.10-w64-mslu.patch
 wxMSW-2.8.10-w64-winhash.patch
-wxMSW-2.8.11-w64.patch
-wxMSW-2.8.10-w64-stc.patch
+wxMSW-2.8.12-w64.patch
+wxMSW-2.8.12-w64-stc.patch
 wxMSW-2.8.11-filefn.patch
+
                                ), @common ],
                },
   mac     => { unicode => [ qw(
