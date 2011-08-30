@@ -1,7 +1,7 @@
 Source: libalien-wxwidgets-perl
 Section: perl
 Priority: optional
-Build-Depends: debhelper (>= 7.0.50), perl (>= 5.10.1),
+Build-Depends: debhelper (>= 8), perl (>= 5.10.1),
  libwxgtk2.8-dev (>= 2.8.10.1), libtest-pod-perl,
  libtest-pod-coverage-perl
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
