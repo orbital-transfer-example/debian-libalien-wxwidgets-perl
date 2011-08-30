@@ -1,8 +1,12 @@
-libalien-wxwidgets-perl (0.51+dfsg-2) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.52+dfsg-1) UNRELEASED; urgency=low
 
+  [ Ansgar Burchardt ]
   * debian/control: Convert Vcs-* fields to Git.
 
- -- Ansgar Burchardt <ansgar@debian.org>  Wed, 27 Jul 2011 18:40:24 +0200
+  [ gregor herrmann ]
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Tue, 30 Aug 2011 19:31:35 +0200
 
 libalien-wxwidgets-perl (0.51+dfsg-1) unstable; urgency=low
 
