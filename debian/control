@@ -9,7 +9,7 @@ Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
  Damyan Ivanov <dmn@debian.org>, Jonathan Yu <jawnsy@cpan.org>,
  Ryan Niebur <ryan@debian.org>, Franck Joncourt <franck@debian.org>,
  gregor herrmann <gregoa@debian.org>
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
 Vcs-Git: git://git.debian.org/pkg-perl/packages/libalien-wxwidgets-perl.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libalien-wxwidgets-perl.git
