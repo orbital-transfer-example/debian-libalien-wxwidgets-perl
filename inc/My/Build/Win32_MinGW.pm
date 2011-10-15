@@ -26,10 +26,14 @@ sub awx_configure {
     my $self = shift;
     my %config = $self->SUPER::awx_configure;
 
+	my $mxarchflags = ( $Config{ptrsize} == 8 ) ? '-m64' : '-m32';
+
     if( $self->awx_debug ) {
-        $config{c_flags} .= ' -g ';
+        $config{c_flags} .= qq( -g $mxarchflags );
+        $config{link_flags} .= qq( $mxarchflags );
     } else {
-        $config{link_flags} .= ' -s ';
+        $config{c_flags} .= qq( $mxarchflags );
+        $config{link_flags} .= qq( -s $mxarchflags );
     }
 
     my $cccflags = $self->wx_config( 'cxxflags' );
@@ -89,8 +93,14 @@ sub awx_compiler_kind { 'gcc' }
 
 sub files_to_install {
     my $self = shift;
-    my( @try ) = qw(mingwm10.dll libgcc_*.dll);
+    my( @try ) = qw(libgcc_*.dll mingwm10.dll);
     my( $dll, $dll_from );
+    
+    # TODO: we need to determine this by testing one of
+    # the build DLL's
+    #
+    # A mingw build may link as static or dynamic to libgcc
+    # and libstdc++
 
     foreach my $d ( @try ) {
         $dll_from = $self->awx_path_search( $d );
@@ -99,9 +109,23 @@ sub files_to_install {
             last;
         }
     }
-
-    return ( $self->SUPER::files_to_install(),
+    
+    if(!defined($dll)) {
+        # check for special case ActivePerl mingw PPM
+        my $ppmmingw = qq($Config{sitearch}/auto/MinGW/bin/mingwm10.dll);
+        if( -f $ppmmingw ) {
+            $dll_from = $ppmmingw;
+            $dll = File::Basename::basename( $dll_from );
+        }
+    }
+    
+    if( defined( $dll_from ) && defined( $dll ) ) {
+        return ( $self->SUPER::files_to_install(),
              ( $dll_from => awx_arch_file( "rEpLaCe/lib/$dll" ) ) );
+    } else {
+        die 'Cannot find libc (mingwm10.dll/ libgcc_*.dll) for install';
+    }
+
 }
 
 sub awx_strip_dlls {
@@ -112,5 +136,6 @@ sub awx_strip_dlls {
     $self->_system( "strip $dir\\lib\\*.dll" );
     $self->_system( "attrib +r $dir\\lib\\*.dll" );
 }
+
 
 1;
