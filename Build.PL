@@ -7,7 +7,7 @@ use lib "lib", "inc";
 use My::Build;
 use Config;
 
-our( $TYPE, $URL );
+our( $TYPE, $URL, $FORCE_GTX );
 
 my %VERSIONS =
 
@@ -16,6 +16,7 @@ my %VERSIONS =
     '2.8.10'        => 'patches/data-2.8.10',
     '2.9.0'         => 'patches/data-2.9.0',
     '2.9.1'         => 'patches/data-2.9.1',
+    '2.9.2'         => 'patches/data-2.9.2',
     );
 
 my ($DEFAULT_VERSION, $DEFAULT_ARCHIVE_TYPE) = _get_default_wxwidgets_version_and_type();
@@ -53,19 +54,21 @@ my $build = $class->new
                          },
     configure_requires => { 'Module::Build'               => '0.28',
                             },
-    get_options     => { 'wxWidgets-debug'         => { type => '!' },
-                         'wxWidgets-unicode'       => { type => '!' },
-                         'wxWidgets-mslu'          => { type => '!' },
-                         'wxWidgets-static'        => { type => '!' },
-                         'wxWidgets-monolithic'    => { type => '!' },
-                         'wxWidgets-universal'     => { type => '!' },
-                         'wxWidgets-build'         => { type => '!' },
-                         'wxWidgets-portable'      => { type => '!',
+    get_options     => { 'wxWidgets-debug'           => { type => '!' },
+                         'wxWidgets-unicode'         => { type => '!' },
+                         'wxWidgets-mslu'            => { type => '!' },
+                         'wxWidgets-static'          => { type => '!' },
+                         'wxWidgets-monolithic'      => { type => '!' },
+                         'wxWidgets-universal'       => { type => '!' },
+                         'wxWidgets-build'           => { type => '!' },
+                         'wxWidgets-portable'        => { type => '!',
                                                         default => $^O eq 'MSWin32' },
-                         'wxWidgets-build-opengl'  => { type => '!' },
-                         'wxWidgets-source'        => { type => '=s' },
-                         'wxWidgets-version'       => { type => '=s' },
-                         'wxWidgets-extraflags'    => { type => '=s' },
+                         'wxWidgets-build-opengl'    => { type => '!' },
+                         'wxWidgets-source'          => { type => '=s' },
+                         'wxWidgets-version'         => { type => '=s' },
+                         'wxWidgets-extraflags'      => { type => '=s' },
+                         'wxWidgets-graphicscontext' => { type => '!',
+                                                        default => $^O ne 'MSWin32' },
                          },
     create_makefile_pl => 'passthrough',
     meta_merge =>
@@ -199,17 +202,21 @@ $build->notes( 'build_wx' => $build_wx );
 $build->notes( 'mk_portable' => $build->args('wxWidgets-portable') );
 $build->notes( 'install_only' => $have_alien_configuration && !$build_wx && $accept_defaults );
 $build->notes( 'extraflags' => $build->args('wxWidgets-extraflags') || '' );
+$build->notes( 'graphicscontext' => $build->args('wxWidgets-graphicscontext') );
+
 if( $build_wx ) {
     $wx_version = _askmulti( $build, 'wxWidgets-version',
                              'Which wxWidgets version?',
                              [ sort keys %VERSIONS ], $DEFAULT_VERSION );
     
-    $DEFAULT_ARCHIVE_TYPE = 'tar.bz2' if $wx_version eq '2.9.1'; # no tar.gz at sourceforge site
+    $DEFAULT_ARCHIVE_TYPE = 'tar.bz2' if $wx_version =~ /^2\.9/; # no tar.gz at sourceforge site
     
     $TYPE = _ask( $build, 'wxWidgets-source', 'Which archive type?', $DEFAULT_ARCHIVE_TYPE );
     $URL = $ENV{AWX_URL};
+    $FORCE_GTX = $build->args('wxWidgets-graphicscontext');
     $build->notes( 'build_data' => do $VERSIONS{$wx_version} );
 }
+
 if( $build_wx && $wx_version !~ /^2\.9/ ) {
     my $build_wx_unicode = _askyn( $build, 'wxWidgets-unicode',
                                    'Do you want to enable Unicode support',
@@ -276,10 +283,10 @@ sub _get_default_wxwidgets_version_and_type {
     my $deftype = 'tar.gz';
     
     if ($^O =~ /^darwin/i ) {
-        # 2.9.1 if this is 64 bit perl on 64 bit mac
+        # 2.9.2 if this is 64 bit perl on 64 bit mac
         if( $Config{ptrsize} == 8 ) {
-            $defver = '2.9.1';
-            $deftype = 'tar.bz2'; # no tar.gz at sourceforge site for 2.9.1
+            $defver = '2.9.2';
+            $deftype = 'tar.bz2'; # no tar.gz at sourceforge site for 2.9.2
         }
     }
     

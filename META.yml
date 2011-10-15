@@ -17,7 +17,7 @@ name: Alien-wxWidgets
 provides:
   Alien::wxWidgets:
     file: lib/Alien/wxWidgets.pm
-    version: 0.52
+    version: 0.53
   Alien::wxWidgets::Utility:
     file: lib/Alien/wxWidgets/Utility.pm
 requires:
@@ -29,4 +29,4 @@ resources:
   homepage: http://wxperl.eu/
   license: http://dev.perl.org/licenses/
   repository: https://wxperl.svn.sourceforge.net/svnroot/wxperl/Alien-wxWidgets
-version: 0.52
+version: 0.53
