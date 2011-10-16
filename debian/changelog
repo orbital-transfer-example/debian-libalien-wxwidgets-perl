@@ -1,3 +1,11 @@
+libalien-wxwidgets-perl (0.53+dfsg-2) UNRELEASED; urgency=low
+
+  QUESTION:
+  I forgot why we need the strict dependency on libwxgtk2.8-dev (>= $current,
+  << $next) and can't use wx-config -- maybe we should look at it again?
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 16 Oct 2011 13:48:54 +0200
+
 libalien-wxwidgets-perl (0.53+dfsg-1) unstable; urgency=low
 
   * New upstream release.
