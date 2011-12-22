@@ -8,6 +8,7 @@ libalien-wxwidgets-perl (0.54+dfsg-1) UNRELEASED; urgency=low
   << $next) and can't use wx-config -- maybe we should look at it again?
 
   * New upstream release.
+  * Adjust substvar generation to common practice in other packages.
 
  -- gregor herrmann <gregoa@debian.org>  Sun, 27 Nov 2011 14:09:34 +0100
 
