@@ -1,16 +1,14 @@
-libalien-wxwidgets-perl (0.54+dfsg-1) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.54+dfsg-1) unstable; urgency=low
 
-  IGNORE-VERSION: 0.54+dfsg-1
-  # only changes for mingw/windows
-
-  QUESTION:
-  I forgot why we need the strict dependency on libwxgtk2.8-dev (>= $current,
-  << $next) and can't use wx-config -- maybe we should look at it again?
-
+  [ gregor herrmann ]
   * New upstream release.
   * Adjust substvar generation to common practice in other packages.
 
- -- gregor herrmann <gregoa@debian.org>  Sun, 27 Nov 2011 14:09:34 +0100
+  [ Dominique Dumont ]
+  * control: BD on libwxgtk2.8-dev >= 2.8.12.1-6 to force dependency on
+    new multi-arch lib
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 30 Dec 2011 17:55:37 +0100
 
 libalien-wxwidgets-perl (0.53+dfsg-1) unstable; urgency=low
 

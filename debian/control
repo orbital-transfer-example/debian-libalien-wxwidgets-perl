@@ -1,24 +1,31 @@
 Source: libalien-wxwidgets-perl
-Section: perl
-Priority: optional
-Build-Depends: debhelper (>= 8), perl (>= 5.10.1),
- libwxgtk2.8-dev (>= 2.8.10.1), libtest-pod-perl,
- libtest-pod-coverage-perl
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
- Damyan Ivanov <dmn@debian.org>, Jonathan Yu <jawnsy@cpan.org>,
- Ryan Niebur <ryan@debian.org>, Franck Joncourt <franck@debian.org>,
- gregor herrmann <gregoa@debian.org>
+           Damyan Ivanov <dmn@debian.org>,
+           Jonathan Yu <jawnsy@cpan.org>,
+           Ryan Niebur <ryan@debian.org>,
+           Franck Joncourt <franck@debian.org>,
+           gregor herrmann <gregoa@debian.org>
+Section: perl
+Priority: optional
+Build-Depends: debhelper (>= 8),
+               perl (>= 5.10.1),
+               libwxgtk2.8-dev (>= 2.8.12.1-6),
+               libtest-pod-perl,
+               libtest-pod-coverage-perl
 Standards-Version: 3.9.2
-Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
-Vcs-Git: git://git.debian.org/pkg-perl/packages/libalien-wxwidgets-perl.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libalien-wxwidgets-perl.git
+Vcs-Git: git://git.debian.org/pkg-perl/packages/libalien-wxwidgets-perl.git
+Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
 
 Package: libalien-wxwidgets-perl
 Architecture: any
-Depends: ${perl:Depends}, ${misc:Depends}, ${samewx:Depends}
+Depends: ${perl:Depends},
+         ${misc:Depends},
+         ${samewx:Depends}
 Description: Perl module for locating wxWidgets binaries
  Alien::WxWidgets is a simple Perl module that detects configuration settings
  of an installed wxWidgets. It is useful to assist in the building of modules
  that require wxWidgets, providing indispensible compile-related information
  like relevant linker and compiler flags.
+
