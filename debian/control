@@ -5,7 +5,8 @@ Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
            Jonathan Yu <jawnsy@cpan.org>,
            Ryan Niebur <ryan@debian.org>,
            Franck Joncourt <franck@debian.org>,
-           gregor herrmann <gregoa@debian.org>
+           gregor herrmann <gregoa@debian.org>,
+           Dominique Dumont <dod@debian.org>
 Section: perl
 Priority: optional
 Build-Depends: debhelper (>= 8),

@@ -7,6 +7,7 @@ libalien-wxwidgets-perl (0.54+dfsg-1) unstable; urgency=low
   [ Dominique Dumont ]
   * control: BD on libwxgtk2.8-dev >= 2.8.12.1-6 to force dependency on
     new multi-arch lib
+  * control: added dod to uploaders
 
  -- Dominique Dumont <dod@debian.org>  Fri, 30 Dec 2011 17:55:37 +0100
 
