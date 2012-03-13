@@ -41,7 +41,7 @@ Files: inc/inc_Locale-Maketext-Simple/Locale/Maketext/Simple.pm
 Copyright: 2003-2006, Audrey Tang <cpan@audreyt.org>
 License: MIT
 
-Files: inc/inc_Module-Load/Module/Load.pm, inc/inc_Module-Load-Conditional/Module/Load/Conditional.pm
+Files: inc/inc_Module-Load*
 Copyright: 2002-2007, Jos Boumans <kane@cpan.org>
 License: Artistic or GPL-1+
 
