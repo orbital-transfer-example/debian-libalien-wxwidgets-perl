@@ -1,4 +1,6 @@
-libalien-wxwidgets-perl (0.55-1) unstable; urgency=low
+libalien-wxwidgets-perl (0.55-1) UNRELEASED; urgency=low
+
+  No important changes for Debian in there. No need to upload.
 
   * Imported Upstream version 0.55
   * control: bumped standard-version (no other changes)
