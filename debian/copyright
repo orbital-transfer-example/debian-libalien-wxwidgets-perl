@@ -1,8 +1,8 @@
-Format-Specification: http://svn.debian.org/wsvn/dep/web/deps/dep5.mdwn?rev=135
-Maintainer: Mattia Barbon <mbarbon@cpan.org>
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Alien-wxWidgets
+Upstream-Contact: Mattia Barbon <mbarbon@cpan.org>
 Source: http://search.cpan.org/dist/Alien-wxWidgets/
-Name: Alien-wxWidgets
-X-Comment: Since upstream-provided tarball contains files without license, it has to be
+Comment: Since upstream-provided tarball contains files without license, it has to be
  repackaged. The following items are removed:
  .
  + inc/src/: contains files without a license
@@ -61,7 +61,7 @@ License: GPL-1+
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 1, or (at your option)
   any later version.
-  .
+ .
   On Debian GNU/Linux systems, the complete text of version 1 of the GNU General
   Public License can be found in `/usr/share/common-licenses/GPL-1.
 
@@ -70,7 +70,7 @@ License: GPL-2+
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2, or (at your option)
   any later version.
-  .
+ .
   On Debian systems, the complete text of version 2 of the GNU General
   Public License can be found in `/usr/share/common-licenses/GPL-2'.
 
@@ -82,10 +82,10 @@ License: MIT
   distribute, sublicense, and/or sell copies of the Software, and to
   permit persons to whom the Software is furnished to do so, subject to
   the following conditions:
-  .
+ .
   The above copyright notice and this permission notice shall be included
   in all copies or substantial portions of the Software.
-  .
+ .
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -93,3 +93,4 @@ License: MIT
   CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
   SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
