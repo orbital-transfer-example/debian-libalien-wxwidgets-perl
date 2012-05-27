@@ -1,12 +1,14 @@
-libalien-wxwidgets-perl (0.55-1) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.59+dfsg-1) UNRELEASED; urgency=low
 
-  No important changes for Debian in there. No need to upload.
-
+  [ Dominique Dumont ]
   * Imported Upstream version 0.55
   * control: bumped standard-version (no other changes)
   * copyright: refreshed format and syntax
 
- -- Dominique Dumont <dod@debian.org>  Tue, 13 Mar 2012 16:03:51 +0100
+  [ gregor herrmann ]
+  * New upstream release 0.59.
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 27 May 2012 20:41:07 +0200
 
 libalien-wxwidgets-perl (0.54+dfsg-1) unstable; urgency=low
 
