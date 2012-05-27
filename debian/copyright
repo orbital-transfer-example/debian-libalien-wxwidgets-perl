@@ -10,7 +10,7 @@ Comment: Since upstream-provided tarball contains files without license, it has 
    removed as it becomes sourceless after inc/src removal
 
 Files: *
-Copyright: 2005-2009, Mattia Barbon <mbarbon@cpan.org>
+Copyright: 2005-2012, Mattia Barbon <mbarbon@cpan.org>
 License: Artistic or GPL-1+
 
 Files: debian/*
@@ -18,7 +18,7 @@ Copyright: 2010, Franck Joncourt <franck@debian.org>
  2009, Jonathan Yu <jawnsy@cpan.org>
  2008-2009, Damyan Ivanov <dmn@debian.org>
  2008-2009, Roberto C. Sanchez <roberto@connexer.com>
- 2011, gregor herrmann <gregoa@debian.org>
+ 2011-2012, gregor herrmann <gregoa@debian.org>
 License: GPL-2+
 
 Files: inc/bin/patch
