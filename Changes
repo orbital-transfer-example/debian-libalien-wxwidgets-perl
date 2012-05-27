@@ -1,5 +1,19 @@
 Revision history for Perl extension Alien::wxWidgets.
 
+0.59  Tue May 01 2012
+    - Version sub modules to keep meta info users happy
+
+0.58  Thu Apr 12 2012
+    - WXWIN / WXDIR MSWin32 fix.
+
+0.57  Tue Mar 27 2012
+    - fix for osx-cocoa overlay drawing in 2.9.x
+    - Return --with-osx_cocoa . --with-mac on better basis.
+    - several fixes for default macosx builds
+
+0.56  Fri Mar 16 2012
+    - add propgrid ribbon webview library names
+
 0.55  Tue Feb 28 2012
     - Correctly interpret boolean option = 1 as 'yes' 
       ( Thanks to Robert Olsen )  
