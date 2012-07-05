@@ -10,7 +10,7 @@ Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
 Section: perl
 Priority: optional
 Build-Depends: debhelper (>= 8),
-               perl (>= 5.10.1),
+               perl,
                libwxgtk2.8-dev (>= 2.8.12.1-6),
                libtest-pod-perl,
                libtest-pod-coverage-perl
