@@ -1,6 +1,10 @@
 libalien-wxwidgets-perl (0.59+dfsg-2) UNRELEASED; urgency=low
 
+  [ gregor herrmann ]
   * debian/control: update {versioned,alternative} (build) dependencies.
+
+  [ Salvatore Bonaccorso ]
+  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
 
  -- gregor herrmann <gregoa@debian.org>  Thu, 05 Jul 2012 12:12:33 -0600
 
