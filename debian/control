@@ -17,7 +17,7 @@ Build-Depends: debhelper (>= 8),
 Standards-Version: 3.9.3
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libalien-wxwidgets-perl.git
 Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libalien-wxwidgets-perl.git
-Homepage: http://search.cpan.org/dist/Alien-wxWidgets/
+Homepage: https://metacpan.org/release/Alien-wxWidgets/
 
 Package: libalien-wxwidgets-perl
 Architecture: any
