@@ -7,6 +7,9 @@ libalien-wxwidgets-perl (0.59+dfsg-2) UNRELEASED; urgency=low
   * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
   * Change search.cpan.org based URIs to metacpan.org based URIs
 
+  [ gregor herrmann ]
+  * Update debian/repack.stub.
+
  -- gregor herrmann <gregoa@debian.org>  Thu, 05 Jul 2012 12:12:33 -0600
 
 libalien-wxwidgets-perl (0.59+dfsg-1) unstable; urgency=low
