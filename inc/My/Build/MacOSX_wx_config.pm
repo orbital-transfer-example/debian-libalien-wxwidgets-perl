@@ -47,7 +47,7 @@ sub wxwidgets_configure_extra_flags {
     	}
         return $extra_flags;
     }
-        
+
     my $darwinver = 0;
     if(`uname -r` =~ /^(\d+)\./) {
         $darwinver = $1;
@@ -61,7 +61,7 @@ sub wxwidgets_configure_extra_flags {
     
     if(     $darwinver >= 10
         &&  `sysctl hw.cpu64bit_capable` =~ /^hw.cpu64bit_capable: 1/
-        && (    $self->notes( 'build_data' )->{data}{version} =~ /^2.8/
+        && ( $self->awx_version_type == 2
              || $Config{ptrsize} == 4 ) ) {
              
         print "Forcing wxWidgets build to 32 bit\n";
@@ -69,15 +69,20 @@ sub wxwidgets_configure_extra_flags {
 		                                     qw(CFLAGS CXXFLAGS LDFLAGS
                                         OBJCFLAGS OBJCXXFLAGS);
     }
-    
-    
-    # on Snow Leopard and Lion force use of 10.6 SDK for all current builds
+       
+    # on Snow Leopard, Lion and Mountain Lion, force use of available SDK and 10.6 min version
     if( $darwinver >= 10 ) {
-        
-        my $sdk1 = qq(/Developer/SDKs/MacOSX10.6.sdk);
-		my $sdk2 = qq(/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk);
-    	my $macossdk = ( -d $sdk2 ) ? $sdk2 : $sdk1;
-	    $extra_flags .= qq( --with-macosx-version-min=10.6 --with-macosx-sdk=$macossdk);
+        $extra_flags .= qq( --with-macosx-version-min=10.6);
+		# SDK 10.7 will not work if we have SDK 10.8 installed too - so reverse order
+        for my $sdkversion ( qw( 10.8 10.7 10.6 ) ) {
+        	my $sdk1 = qq(/Developer/SDKs/MacOSX${sdkversion}.sdk);
+			my $sdk2 = qq(/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX${sdkversion}.sdk);
+    		my $macossdk = ( -d $sdk2 ) ? $sdk2 : $sdk1;
+    		if( -d $macossdk ) {
+    			$extra_flags .= qq( --with-macosx-sdk=$macossdk);
+    			last;
+    		}
+    	}
     }
     
 	$extra_flags .= ' --enable-graphics_ctx';
@@ -89,7 +94,7 @@ sub awx_build_toolkit {
     my $self = shift;
     # use Cocoa for OS X wxWidgets >= 2.9
     # we don't support lower than 2.8 anymore
-    if( $self->notes( 'build_data' )->{data}{version} =~ /^2.8/ ) {
+    if( $self->awx_version_type == 2) {
     	return 'mac';
     } else {
         return 'osx_cocoa';
@@ -103,7 +108,7 @@ sub build_wxwidgets {
 
     # can't build wxWidgets 2.8.x with 64 bit Perl
     if(    $Config{ptrsize} == 8
-        && $self->notes( 'build_data' )->{data}{version} =~ /^2.8/ ) {
+        && $self->awx_version_type == 2 ) {
         print <<EOT;
 =======================================================================
 The 2.8.x wxWidgets for OS X does not support 64-bit. In order to build
