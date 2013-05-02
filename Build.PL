@@ -18,6 +18,7 @@ my %VERSIONS =
     '2.9.1'         => 'patches/data-2.9.1',
     '2.9.2'         => 'patches/data-2.9.2',
     '2.9.3'         => 'patches/data-2.9.3',
+    '2.9.4'	    => 'patches/data-2.9.4',
     );
 
 my ($DEFAULT_VERSION, $DEFAULT_ARCHIVE_TYPE) = _get_default_wxwidgets_version_and_type();
@@ -68,6 +69,7 @@ my $build = $class->new
                          'wxWidgets-source'          => { type => '=s' },
                          'wxWidgets-version'         => { type => '=s' },
                          'wxWidgets-extraflags'      => { type => '=s' },
+                         'wxWidgets-userpatch'       => { type => '=s' },
                          'wxWidgets-graphicscontext' => { type => '!',
                                                         default => $^O ne 'MSWin32' },
                          },
@@ -75,9 +77,9 @@ my $build = $class->new
     meta_merge =>
       { resources       =>
           { 'license'       => 'http://dev.perl.org/licenses/',
-            'homepage'      => 'http://wxperl.eu/',
+            'homepage'      => 'http://www.wxperl.it/',
             'bugtracker'    => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Alien-wxWidgets',
-            'repository'    => 'https://wxperl.svn.sourceforge.net/svnroot/wxperl/Alien-wxWidgets',
+            'repository'    => 'http://svn.code.sf.net/p/wxperl/code/Alien-wxWidgets',
             'MailingList'   => 'http://lists.perl.org/list/wxperl-users.html',
             },
         },
@@ -96,6 +98,7 @@ my $have_alien_configuration = 0;
 # if there is any any wxWidgets installation registered with Alien::wxWidgets
 # it will only get upgraded if it was compiled using Alien::wxWidgets itself and
 # it is older than $DEFAULT_VERSION
+
 my $ok = eval {
     require Alien::wxWidgets;
     require File::Basename;
@@ -203,6 +206,7 @@ $build->notes( 'build_wx' => $build_wx );
 $build->notes( 'mk_portable' => $build->args('wxWidgets-portable') );
 $build->notes( 'install_only' => $have_alien_configuration && !$build_wx && $accept_defaults );
 $build->notes( 'extraflags' => $build->args('wxWidgets-extraflags') || '' );
+$build->notes( 'userpatch' => $build->args('wxWidgets-userpatch') || '' );
 $build->notes( 'graphicscontext' => $build->args('wxWidgets-graphicscontext') );
 
 if( $build_wx ) {
@@ -285,10 +289,10 @@ sub _get_default_wxwidgets_version_and_type {
     my $deftype = 'tar.gz';
     
     if ($^O =~ /^darwin/i ) {
-        # 2.9.3 if this is 64 bit perl on 64 bit mac
+        # 2.9.4 if this is 64 bit perl on 64 bit mac
         if( $Config{ptrsize} == 8 ) {
-            $defver = '2.9.3';
-            $deftype = 'tar.bz2'; # no tar.gz at sourceforge site for 2.9.3
+            $defver = '2.9.4';
+            $deftype = 'tar.bz2'; # no tar.gz at sourceforge site for 2.9.x
         }
     }
     

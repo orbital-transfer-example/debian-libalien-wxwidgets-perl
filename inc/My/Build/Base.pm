@@ -316,7 +316,7 @@ sub extract_wxwidgets {
     print "Extracting wxWidgets...\n";
 
     $self->_load_bundled_modules;
-    $Archive::Extract::PREFER_BIN = 1;
+    $Archive::Extract::PREFER_BIN = ( $^O =~ /^mswin/i ) ? 0 : 1;
     my $ae = Archive::Extract->new( archive => $archive );
 
     die 'Error: ', $ae->error unless $ae->extract;
@@ -328,7 +328,10 @@ sub patch_wxwidgets {
     my $self = shift;
     my $old_dir = Cwd::cwd();
     my @patches = $self->awx_wx_patches;
-
+    if( my $userpatch = $self->notes( 'userpatch' ) ) {
+        die qq(User specified patch $userpatch not found.) if !-f $userpatch;
+        push( @patches, $userpatch );
+    }
     print "Patching wxWidgets...\n";
 
     my $wx_dir = $self->notes( 'build_data' )->{data}{directory};
@@ -422,6 +425,13 @@ sub awx_wx_patches {
 
     return map { File::Spec->rel2abs( File::Spec->catfile( 'patches', $_ ) ) }
                @{$data->{$toolkit}{$unicode}};
+}
+
+sub awx_version_type {
+    my $self = shift;
+    my $versiontype = ( $self->notes( 'build_data' )->{data}{version} =~ /^2\.(6|7|8)/ )
+        ? 2 : 3;
+    return $versiontype;
 }
 
 sub awx_get_name {
