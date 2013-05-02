@@ -1,4 +1,6 @@
-libalien-wxwidgets-perl (0.59+dfsg-2) UNRELEASED; urgency=low
+libalien-wxwidgets-perl (0.64+dfsg-1~1.gbp1d88fe) UNRELEASED; urgency=low
+
+  ** SNAPSHOT build @1d88fe6eb538ac995a14780edc4587ee20b1b9f5 **
 
   [ gregor herrmann ]
   * debian/control: update {versioned,alternative} (build) dependencies.
@@ -10,7 +12,10 @@ libalien-wxwidgets-perl (0.59+dfsg-2) UNRELEASED; urgency=low
   [ gregor herrmann ]
   * Update debian/repack.stub.
 
- -- gregor herrmann <gregoa@debian.org>  Thu, 05 Jul 2012 12:12:33 -0600
+  [ Dominique Dumont ]
+  * Imported Upstream version 0.64+dfsg
+
+ -- Dominique Dumont <dod@debian.org>  Thu, 02 May 2013 18:26:25 +0200
 
 libalien-wxwidgets-perl (0.59+dfsg-1) unstable; urgency=low
 
