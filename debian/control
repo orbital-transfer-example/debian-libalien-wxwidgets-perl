@@ -14,7 +14,7 @@ Build-Depends: debhelper (>= 8),
                libwxgtk2.8-dev (>= 2.8.12.1-6),
                libtest-pod-perl,
                libtest-pod-coverage-perl
-Standards-Version: 3.9.3
+Standards-Version: 3.9.4
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-perl/packages/libalien-wxwidgets-perl.git
 Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/libalien-wxwidgets-perl.git
 Homepage: https://metacpan.org/release/Alien-wxWidgets/
