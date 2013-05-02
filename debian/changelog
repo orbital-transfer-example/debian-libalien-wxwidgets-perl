@@ -1,9 +1,4 @@
-libalien-wxwidgets-perl (0.64+dfsg-1~1.gbp1d88fe) UNRELEASED; urgency=low
-
-  ** SNAPSHOT build @1d88fe6eb538ac995a14780edc4587ee20b1b9f5 **
-
-  [ gregor herrmann ]
-  * debian/control: update {versioned,alternative} (build) dependencies.
+libalien-wxwidgets-perl (0.64+dfsg-1) unstable; urgency=low
 
   [ Salvatore Bonaccorso ]
   * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
@@ -11,11 +6,13 @@ libalien-wxwidgets-perl (0.64+dfsg-1~1.gbp1d88fe) UNRELEASED; urgency=low
 
   [ gregor herrmann ]
   * Update debian/repack.stub.
+  * debian/control: update {versioned,alternative} (build) dependencies.
 
   [ Dominique Dumont ]
   * Imported Upstream version 0.64+dfsg
+  * control: updated standard-version to 3.9.4 (no other changes)
 
- -- Dominique Dumont <dod@debian.org>  Thu, 02 May 2013 18:26:25 +0200
+ -- Dominique Dumont <dod@debian.org>  Thu, 02 May 2013 18:40:15 +0200
 
 libalien-wxwidgets-perl (0.59+dfsg-1) unstable; urgency=low
 
