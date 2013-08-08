@@ -11,6 +11,7 @@ Section: perl
 Priority: optional
 Build-Depends: debhelper (>= 8),
                perl,
+               libmodule-pluggable-perl | perl (<< 5.17.0),
                libwxgtk2.8-dev (>= 2.8.12.1-6),
                libtest-pod-perl,
                libtest-pod-coverage-perl
@@ -23,7 +24,8 @@ Package: libalien-wxwidgets-perl
 Architecture: any
 Depends: ${perl:Depends},
          ${misc:Depends},
-         ${samewx:Depends}
+         ${samewx:Depends},
+         libmodule-pluggable-perl | perl (<< 5.17.0)
 Description: Perl module for locating wxWidgets binaries
  Alien::WxWidgets is a simple Perl module that detects configuration settings
  of an installed wxWidgets. It is useful to assist in the building of modules
