@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.64+dfsg-2) UNRELEASED; urgency=low
+
+  * Explicitly (build-)depend on Module::Pluggable. (Closes: #711646)
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 08 Aug 2013 14:04:53 +0200
+
 libalien-wxwidgets-perl (0.64+dfsg-1) unstable; urgency=low
 
   [ Salvatore Bonaccorso ]
