@@ -11,4 +11,4 @@ NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut 
 	dh $@
 
 override_dh_gencontrol:
-	dh_gencontrol -- -V'samewx:Depends=libwxgtk2.8-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk2.8-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)'
+	dh_gencontrol -- -V'samewx:Depends=libwxgtk2.8-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk2.8-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media2.8-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media2.8-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)'

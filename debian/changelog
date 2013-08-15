@@ -1,6 +1,12 @@
 libalien-wxwidgets-perl (0.64+dfsg-2) UNRELEASED; urgency=low
 
+  [ gregor herrmann ]
   * Explicitly (build-)depend on Module::Pluggable. (Closes: #711646)
+
+  [ Niko Tyni ]
+  * Add build and runtime dependencies on the new libwxgtk-media2.8-dev
+    package, in order to include configuration information about the
+    media plugin. (See #719380)
 
  -- gregor herrmann <gregoa@debian.org>  Thu, 08 Aug 2013 14:04:53 +0200
 
