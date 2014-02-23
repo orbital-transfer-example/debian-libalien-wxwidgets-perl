@@ -1,7 +1,6 @@
 Source: libalien-wxwidgets-perl
 Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
-Uploaders: Roberto C. Sanchez <roberto@connexer.com>,
-           Damyan Ivanov <dmn@debian.org>,
+Uploaders: Damyan Ivanov <dmn@debian.org>,
            Jonathan Yu <jawnsy@cpan.org>,
            Ryan Niebur <ryan@debian.org>,
            Franck Joncourt <franck@debian.org>,
