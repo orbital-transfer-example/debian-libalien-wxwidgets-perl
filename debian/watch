@@ -1,6 +1,6 @@
 version=3
 
 opts=dversionmangle=s/\+dfsg[.\d]*// \
-https://metacpan.org/release/Alien-wxWidgets/ .*/Alien-wxWidgets-(.*)\.tar\.gz \
+https://metacpan.org/release/Alien-wxWidgets .*/Alien-wxWidgets-(.*)\.tar\.gz \
      debian debian/repack.stub
 
