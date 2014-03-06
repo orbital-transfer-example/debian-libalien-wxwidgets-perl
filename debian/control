@@ -31,4 +31,3 @@ Description: Perl module for locating wxWidgets binaries
  of an installed wxWidgets. It is useful to assist in the building of modules
  that require wxWidgets, providing indispensible compile-related information
  like relevant linker and compiler flags.
-
