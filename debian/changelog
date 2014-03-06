@@ -1,8 +1,16 @@
-libalien-wxwidgets-perl (0.64+dfsg-3) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.64+dfsg-3) unstable; urgency=medium
 
+  * Team upload
+
+  [ gregor herrmann ]
   * Strip trailing slash from metacpan URLs.
 
- -- gregor herrmann <gregoa@debian.org>  Thu, 27 Feb 2014 22:32:09 +0100
+  [ Florian Schlichting ]
+  * Switch dh compatibility to level 9 to enable passing of hardening flags
+  * Delete trailing empty line in debian/control
+  * Declare compliance with Debian Policy 3.9.5
+
+ -- Florian Schlichting <fsfs@debian.org>  Fri, 07 Mar 2014 00:30:57 +0100
 
 libalien-wxwidgets-perl (0.64+dfsg-2) unstable; urgency=low
 
