@@ -9,7 +9,7 @@ build_requires:
 configure_requires:
   Module::Build: 0.28
 dynamic_config: 1
-generated_by: 'Module::Build version 0.4003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Module::Build version 0.4004, CPAN::Meta::Converter version 2.120630'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -18,7 +18,7 @@ name: Alien-wxWidgets
 provides:
   Alien::wxWidgets:
     file: lib/Alien/wxWidgets.pm
-    version: 0.64
+    version: 0.65
   Alien::wxWidgets::Utility:
     file: lib/Alien/wxWidgets/Utility.pm
     version: 0.59
@@ -31,4 +31,4 @@ resources:
   license: http://dev.perl.org/licenses/
   repository: http://svn.code.sf.net/p/wxperl/code/Alien-wxWidgets
   x_MailingList: http://lists.perl.org/list/wxperl-users.html
-version: 0.64
+version: 0.65
