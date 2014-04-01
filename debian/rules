@@ -1,7 +1,8 @@
 #!/usr/bin/make -f
 
 # wxWidgets version
-export V=`dpkg -s libwxgtk2.8-dev | grep ^Version |cut -f2 -d' '`
+WXVER=3.0
+export V=`dpkg -s libwxgtk$(WXVER)-dev | grep ^Version |cut -f2 -d' '`
 VMAJOR:=$(shell echo $(V) |cut -f 1 -d .)
 VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
 VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
@@ -11,4 +12,4 @@ NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut 
 	dh $@
 
 override_dh_gencontrol:
-	dh_gencontrol -- -V'samewx:Depends=libwxgtk2.8-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk2.8-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media2.8-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media2.8-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)'
+	dh_gencontrol -- -V'samewx:Depends=libwxgtk$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)'

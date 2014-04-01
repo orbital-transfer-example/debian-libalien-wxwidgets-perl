@@ -11,8 +11,8 @@ Priority: optional
 Build-Depends: debhelper (>= 9.20120312~),
                perl,
                libmodule-pluggable-perl | perl (<< 5.17.0),
-               libwxgtk2.8-dev (>= 2.8.12.1-6),
-               libwxgtk-media2.8-dev,
+               libwxgtk3.0-dev,
+               libwxgtk-media3.0-dev,
                libtest-pod-perl,
                libtest-pod-coverage-perl
 Standards-Version: 3.9.5
