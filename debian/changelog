@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.65+dfsg-2) unstable; urgency=medium
+
+  * Add perlapi-* to Depends (cf. #750017).
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 05 Jun 2014 19:34:15 +0200
+
 libalien-wxwidgets-perl (0.65+dfsg-1) unstable; urgency=medium
 
   * New upstream release.
