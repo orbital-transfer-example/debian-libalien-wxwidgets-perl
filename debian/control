@@ -25,6 +25,7 @@ Architecture: any
 Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
+         ${perlapi:Depends},
          libmodule-pluggable-perl | perl (<< 5.17.0)
 Description: Perl module for locating wxWidgets binaries
  Alien::WxWidgets is a simple Perl module that detects configuration settings

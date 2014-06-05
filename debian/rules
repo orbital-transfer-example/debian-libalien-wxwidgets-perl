@@ -8,8 +8,10 @@ VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
 VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
 NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut -f 1 -d - ` + 1)
 
+PERLAPI := $(shell perl -MConfig -e 'print ($$Config{debian_abi} || $$Config{version})')
+
 %:
 	dh $@
 
 override_dh_gencontrol:
-	dh_gencontrol -- -V'samewx:Depends=libwxgtk$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)'
+	dh_gencontrol -- -V'samewx:Depends=libwxgtk$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)' -V'perlapi:Depends=perlapi-$(PERLAPI)'
