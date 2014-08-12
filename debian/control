@@ -22,6 +22,7 @@ Homepage: https://metacpan.org/release/Alien-wxWidgets
 
 Package: libalien-wxwidgets-perl
 Architecture: any
+Provides: ${wxperl:Provides}
 Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
