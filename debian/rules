@@ -22,8 +22,4 @@ get_perl_wx_version: blib
 	: $(eval PERL_WX_VERSION := $(shell $(_DETECTION_CMD)))
 	@echo PERL_WX_VERSION detected as $(PERL_WX_VERSION)
 
-override_dh_install: get_perl_wx_version
-	dh_install
-	echo $(PERL_WX_VERSION)
-
 .PHONY: get_perl_wx_version
