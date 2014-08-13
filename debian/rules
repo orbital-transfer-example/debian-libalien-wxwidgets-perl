@@ -10,18 +10,18 @@ NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut 
 
 PERLAPI := $(shell perl -MConfig -e 'print ($$Config{debian_abi} || $$Config{version})')
 
+_DETECTION_CMD := PERL5LIB=$(CURDIR)/blib/lib:$(CURDIR)/blib/arch perl -MAlien::wxWidgets -e '$$key = Alien::wxWidgets->key; $$key =~ s/_/-/g; print "$$key";'
+
 %:
 	dh $@
+
+get_perl_wx_version: blib
+	: $(eval PERL_WX_VERSION := $(shell $(_DETECTION_CMD)))
+	@echo PERL_WX_VERSION detected as $(PERL_WX_VERSION)
 
 override_dh_gencontrol: get_perl_wx_version
 	dh_gencontrol -- -V'samewx:Depends=libwxgtk$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)' \
 		-V'perlapi:Depends=perlapi-$(PERLAPI)' \
 		-V'wxperl:Provides=wxperl-$(PERL_WX_VERSION)'
-
-_DETECTION_CMD := PERL5LIB=$(CURDIR)/blib/lib:$(CURDIR)/blib/arch perl -MAlien::wxWidgets -e '$$key = Alien::wxWidgets->key; $$key =~ s/_/-/g; print "$$key";'
-
-get_perl_wx_version: blib
-	: $(eval PERL_WX_VERSION := $(shell $(_DETECTION_CMD)))
-	@echo PERL_WX_VERSION detected as $(PERL_WX_VERSION)
 
 .PHONY: get_perl_wx_version
