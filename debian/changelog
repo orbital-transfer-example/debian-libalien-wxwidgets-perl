@@ -1,4 +1,4 @@
-libalien-wxwidgets-perl (0.65+dfsg-3) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.65+dfsg-3) unstable; urgency=medium
 
   [ Niko Tyni ]
   * Provide wxperl-<key> virtual package.
@@ -9,7 +9,7 @@ libalien-wxwidgets-perl (0.65+dfsg-3) UNRELEASED; urgency=medium
   [ gregor herrmann ]
   * Add Breaks on libwx-perl versions which don't use the virtual package.
 
- -- Niko Tyni <ntyni@debian.org>  Wed, 13 Aug 2014 19:20:03 +0200
+ -- gregor herrmann <gregoa@debian.org>  Wed, 13 Aug 2014 23:21:34 +0200
 
 libalien-wxwidgets-perl (0.65+dfsg-2) unstable; urgency=medium
 
