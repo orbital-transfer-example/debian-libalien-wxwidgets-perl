@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.65+dfsg-4) UNRELEASED; urgency=medium
+
+  * Update Vcs-Browser URL to cgit web frontend
+
+ -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 16 Aug 2014 09:29:26 +0200
+
 libalien-wxwidgets-perl (0.65+dfsg-3) unstable; urgency=medium
 
   [ Niko Tyni ]
