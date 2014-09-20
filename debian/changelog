@@ -1,8 +1,15 @@
-libalien-wxwidgets-perl (0.65+dfsg-4) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.65+dfsg-4) unstable; urgency=medium
 
+  [ Salvatore Bonaccorso ]
   * Update Vcs-Browser URL to cgit web frontend
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 16 Aug 2014 09:29:26 +0200
+  [ gregor herrmann ]
+  * Drop manual generation of perlapi-* dependency, use debhelper
+    9.20140809 instead.
+  * Declare compliance with Debian Policy 3.9.6.
+  * Explicitly build-depend on libmodule-build-perl.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 20 Sep 2014 02:47:28 +0200
 
 libalien-wxwidgets-perl (0.65+dfsg-3) unstable; urgency=medium
 
