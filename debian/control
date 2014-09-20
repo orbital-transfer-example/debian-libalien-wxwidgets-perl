@@ -8,7 +8,7 @@ Uploaders: Damyan Ivanov <dmn@debian.org>,
            Dominique Dumont <dod@debian.org>
 Section: perl
 Priority: optional
-Build-Depends: debhelper (>= 9.20120312~),
+Build-Depends: debhelper (>= 9.20140809~),
                perl,
                libmodule-pluggable-perl | perl (<< 5.17.0),
                libwxgtk3.0-dev,
@@ -26,7 +26,6 @@ Provides: ${wxperl:Provides}
 Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
-         ${perlapi:Depends},
          libmodule-pluggable-perl | perl (<< 5.17.0)
 Breaks: libwx-perl (<< 1:0.9923-2)
 Description: Perl module for locating wxWidgets binaries
