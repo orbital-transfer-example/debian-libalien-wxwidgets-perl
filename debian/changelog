@@ -1,8 +1,13 @@
-libalien-wxwidgets-perl (0.67+dfsg-1) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.67+dfsg-1) unstable; urgency=medium
 
   * New upstream release.
+  * Drop wx-config-version.patch, applied upstream.
+  * Add patch to make builds reproducible. Thanks to Chris Lamb for the
+    bug report and patch. (Closes: #778949)
+  * Update years of packaging copyright.
+  * Mark package as autopkgtest-able.
 
- -- gregor herrmann <gregoa@debian.org>  Fri, 01 May 2015 17:09:47 +0200
+ -- gregor herrmann <gregoa@debian.org>  Fri, 01 May 2015 17:29:57 +0200
 
 libalien-wxwidgets-perl (0.65+dfsg-4) unstable; urgency=medium
 
