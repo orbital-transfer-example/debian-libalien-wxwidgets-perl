@@ -1,3 +1,9 @@
+libalien-wxwidgets-perl (0.67+dfsg-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 01 May 2015 17:09:47 +0200
+
 libalien-wxwidgets-perl (0.65+dfsg-4) unstable; urgency=medium
 
   [ Salvatore Bonaccorso ]
