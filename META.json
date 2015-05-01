@@ -4,7 +4,7 @@
       "Mattia Barbon <mbarbon@cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.4004, CPAN::Meta::Converter version 2.120630",
+   "generated_by" : "Module::Build version 0.4205",
    "license" : [
       "perl_5"
    ],
@@ -36,7 +36,7 @@
    "provides" : {
       "Alien::wxWidgets" : {
          "file" : "lib/Alien/wxWidgets.pm",
-         "version" : "0.65"
+         "version" : "0.67"
       },
       "Alien::wxWidgets::Utility" : {
          "file" : "lib/Alien/wxWidgets/Utility.pm",
@@ -55,7 +55,7 @@
       "repository" : {
          "url" : "http://svn.code.sf.net/p/wxperl/code/Alien-wxWidgets"
       },
-      "x_MailingList" : "http://lists.perl.org/list/wxperl-users.html"
+      "x_mailingList" : "http://lists.perl.org/list/wxperl-users.html"
    },
-   "version" : "0.65"
+   "version" : "0.67"
 }

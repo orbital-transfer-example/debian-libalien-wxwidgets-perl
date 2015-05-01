@@ -18,8 +18,10 @@ my %VERSIONS =
     '2.9.1'         => 'patches/data-2.9.1',
     '2.9.2'         => 'patches/data-2.9.2',
     '2.9.3'         => 'patches/data-2.9.3',
-    '2.9.4'	    => 'patches/data-2.9.4',
+    '2.9.4'	        => 'patches/data-2.9.4',
     '3.0.0'         => 'patches/data-3.0.0',
+    '3.0.1'         => 'patches/data-3.0.1',
+    '3.0.2'         => 'patches/data-3.0.2',
     );
 
 my ($DEFAULT_VERSION, $DEFAULT_ARCHIVE_TYPE) = _get_default_wxwidgets_version_and_type();
@@ -71,13 +73,13 @@ my $build = $class->new
                          'wxWidgets-version'         => { type => '=s' },
                          'wxWidgets-extraflags'      => { type => '=s' },
                          'wxWidgets-userpatch'       => { type => '=s' },
-                         'wxWidgets-graphicscontext' => { type => '!',
-                                                        default => $^O ne 'MSWin32' },
+                         'wxWidgets-graphicscontext' => { type => '!', default => 1 },
                          },
+    
     create_makefile_pl => 'passthrough',
     meta_merge =>
       { resources       =>
-          { 'license'       => 'http://dev.perl.org/licenses/',
+          { 'license'       => [ 'http://dev.perl.org/licenses/' ],
             'homepage'      => 'http://www.wxperl.it/',
             'bugtracker'    => 'http://rt.cpan.org/NoAuth/Bugs.html?Dist=Alien-wxWidgets',
             'repository'    => 'http://svn.code.sf.net/p/wxperl/code/Alien-wxWidgets',
@@ -152,9 +154,9 @@ EOP
     require My::Build::Base;
     my $wx_config = My::Build::Base->awx_path_search( 'wx-config' );
     if( $wx_config ) {
-        my $ans = `wx-config --version`;
-        if( $ans =~ /^2\./ ) {
-            my $prefix = `wx-config --prefix`;
+        my $ans = `$wx_config --version`;
+        if( $ans =~ /^[23]\./ ) {
+            my $prefix = `$wx_config --prefix`;
             chomp foreach $ans, $prefix;
             if( _check_installed_widgets_ok($ans, $prefix) ) {
                 $build_wx_dflt = 'no' ;
@@ -178,7 +180,7 @@ if( $ENV{AUTOMATED_TESTING} ) {
     if( $^O ne 'darwin' && $^O ne 'MSWin32' ) {
         my $pkg_config = $ENV{PKG_CONFIG} || 'pkg-config';
         my $ans = `$pkg_config --modversion gtk+-2.0 2>&1`;
-        unless( $ans =~ /^2\./ ) {
+        unless( $ans =~ /^[23]\./ ) {
             print <<EOT;
 Could not detect GTK+ 2 by running '$pkg_config': aborting
 
@@ -215,7 +217,7 @@ if( $build_wx ) {
                              'Which wxWidgets version?',
                              [ sort keys %VERSIONS ], $DEFAULT_VERSION );
     
-    $DEFAULT_ARCHIVE_TYPE = 'tar.bz2' if $wx_version =~ /^2\.9/; # no tar.gz at sourceforge site
+    $DEFAULT_ARCHIVE_TYPE = 'tar.bz2' if $wx_version =~ /^(2\.9|3\.)/; # no tar.gz at sourceforge site
     
     $TYPE = _ask( $build, 'wxWidgets-source', 'Which archive type?', $DEFAULT_ARCHIVE_TYPE );
     $URL = $ENV{AWX_URL};
@@ -223,7 +225,7 @@ if( $build_wx ) {
     $build->notes( 'build_data' => do $VERSIONS{$wx_version} );
 }
 
-if( $build_wx && $wx_version !~ /^2\.9/ ) {
+if( $build_wx && $wx_version !~ /^(2\.9|3\.)/ ) {
     my $build_wx_unicode = _askyn( $build, 'wxWidgets-unicode',
                                    'Do you want to enable Unicode support',
                                    'yes' );
@@ -286,7 +288,7 @@ sub _ask {
 sub _get_default_wxwidgets_version_and_type {
     
     # default version and archive type
-    my $defver = '3.0.0';
+    my $defver = '3.0.2';
     my $deftype = 'tar.bz2';
     
     if( $^O =~ /^linux/i) {
