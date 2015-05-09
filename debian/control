@@ -28,6 +28,7 @@ Provides: ${wxperl:Provides}
 Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
+         gcc | c-compiler,
          libmodule-pluggable-perl | perl (<< 5.17.0)
 Breaks: libwx-perl (<< 1:0.9923-2)
 Description: Perl module for locating wxWidgets binaries
