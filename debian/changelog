@@ -1,3 +1,13 @@
+libalien-wxwidgets-perl (0.67+dfsg-3) unstable; urgency=medium
+
+  * Update generation of libwx*-dev versioned dependencies.
+    Adjust version mangling of upper bound to also handle the new "+dfsg"
+    versions.
+    (Closes: #808284)
+  * Add another fix to fix-pod-spelling.patch.
+
+ -- gregor herrmann <gregoa@debian.org>  Fri, 18 Dec 2015 15:16:13 +0100
+
 libalien-wxwidgets-perl (0.67+dfsg-2) unstable; urgency=medium
 
   * Add "gcc | c-compiler" to Depends. (Closes: #784846)
