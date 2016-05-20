@@ -1,6 +1,10 @@
 libalien-wxwidgets-perl (0.67+dfsg-4) UNRELEASED; urgency=medium
 
+  [ Salvatore Bonaccorso ]
   * debian/control: Use HTTPS transport protocol for Vcs-Git URI
+
+  [ gregor herrmann ]
+  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 30 Jan 2016 20:02:47 +0100
 
