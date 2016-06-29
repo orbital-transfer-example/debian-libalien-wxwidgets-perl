@@ -2,6 +2,8 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Alien-wxWidgets
 Upstream-Contact: Mattia Barbon <mbarbon@cpan.org>
 Source: https://metacpan.org/release/Alien-wxWidgets
+Files-Excluded: inc/bin/patch.exe
+ inc/src/
 Comment: Since upstream-provided tarball contains files without license, it has to be
  repackaged. The following items are removed:
  .
