@@ -5,6 +5,7 @@ libalien-wxwidgets-perl (0.67+dfsg-4) UNRELEASED; urgency=medium
 
   [ gregor herrmann ]
   * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
+  * Switch repackaging framework to Files-Excluded method.
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 30 Jan 2016 20:02:47 +0100
 
