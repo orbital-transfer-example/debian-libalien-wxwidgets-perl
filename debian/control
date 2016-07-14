@@ -3,7 +3,6 @@ Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Damyan Ivanov <dmn@debian.org>,
            Jonathan Yu <jawnsy@cpan.org>,
            Ryan Niebur <ryan@debian.org>,
-           Franck Joncourt <franck@debian.org>,
            gregor herrmann <gregoa@debian.org>,
            Dominique Dumont <dod@debian.org>
 Section: perl
