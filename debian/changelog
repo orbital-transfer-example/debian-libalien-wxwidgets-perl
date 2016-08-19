@@ -13,6 +13,7 @@ libalien-wxwidgets-perl (0.67+dfsg-4) UNRELEASED; urgency=medium
 
   [ gregor herrmann ]
   * Remove Jonathan Yu from Uploaders. Thanks for your work!
+  * Remove Ryan Niebur from Uploaders. Thanks for your work!
 
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 30 Jan 2016 20:02:47 +0100
 
