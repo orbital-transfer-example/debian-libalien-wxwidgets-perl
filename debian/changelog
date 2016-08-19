@@ -11,6 +11,9 @@ libalien-wxwidgets-perl (0.67+dfsg-4) UNRELEASED; urgency=medium
   * debian/control: Remove Franck Joncourt from Uploaders.
     Thanks to Tobias Frost (Closes: #831276)
 
+  [ gregor herrmann ]
+  * Remove Jonathan Yu from Uploaders. Thanks for your work!
+
  -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 30 Jan 2016 20:02:47 +0100
 
 libalien-wxwidgets-perl (0.67+dfsg-3) unstable; urgency=medium
