@@ -1,6 +1,7 @@
 Build.PL
 Changes
 inc/bin/patch
+inc/bin/patch.exe
 inc/inc_Archive-Extract/Archive/Extract.pm
 inc/inc_File-Fetch/File/Fetch.pm
 inc/inc_IPC-Cmd/IPC/Cmd.pm
@@ -25,6 +26,8 @@ inc/My/Build/Win32_MinGW.pm
 inc/My/Build/Win32_MinGW_Bakefile.pm
 inc/My/Build/Win32_MSVC.pm
 inc/My/Build/Win32_MSVC_Bakefile.pm
+inc/src/patch-2.5.9-7-src.zip
+inc/src/patch.exe.manifest
 lib/Alien/wxWidgets.pm
 lib/Alien/wxWidgets/Utility.pm
 Makefile.PL
@@ -90,6 +93,7 @@ patches/wxWidgets-2.8.10-gsocket.patch
 patches/wxWidgets-2.9.0-magic.patch
 patches/wxWidgets-2.9.0-msgdlg.patch
 patches/wxWidgets-2.9.4-plugin.patch
+patches/wxWidgets-3.0.2-webkit.patch
 README.txt
 script/make_ppm.pl
 t/01_load.t
