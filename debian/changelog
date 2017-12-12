@@ -1,4 +1,4 @@
-libalien-wxwidgets-perl (0.67+dfsg-4) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.69+dfsg-1) unstable; urgency=medium
 
   [ Salvatore Bonaccorso ]
   * debian/control: Use HTTPS transport protocol for Vcs-Git URI
@@ -15,7 +15,12 @@ libalien-wxwidgets-perl (0.67+dfsg-4) UNRELEASED; urgency=medium
   * Remove Jonathan Yu from Uploaders. Thanks for your work!
   * Remove Ryan Niebur from Uploaders. Thanks for your work!
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 30 Jan 2016 20:02:47 +0100
+  [ Damyan Ivanov ]
+  * New upstream version 0.69+dfsg
+  * drop reproducible_build.patch (applied upstream)
+  * declare conformance with Policy 4.1.2 (no changes)
+
+ -- Damyan Ivanov <dmn@debian.org>  Tue, 12 Dec 2017 19:26:23 +0000
 
 libalien-wxwidgets-perl (0.67+dfsg-3) unstable; urgency=medium
 
