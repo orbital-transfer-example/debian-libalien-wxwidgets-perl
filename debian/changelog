@@ -1,6 +1,10 @@
 libalien-wxwidgets-perl (0.69+dfsg-2) UNRELEASED; urgency=medium
 
+  [ Damyan Ivanov ]
   * declare conformance with Policy 4.1.3 (no changes needed)
+
+  [ Salvatore Bonaccorso ]
+  * Update Vcs-* headers for switch to salsa.debian.org
 
  -- Damyan Ivanov <dmn@debian.org>  Sat, 13 Jan 2018 13:19:58 +0000
 
