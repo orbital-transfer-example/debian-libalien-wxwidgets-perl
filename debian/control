@@ -9,7 +9,7 @@ Priority: optional
 Build-Depends: debhelper (>= 9.20140809~),
                perl,
                libmodule-build-perl,
-               libmodule-pluggable-perl | perl (<< 5.17.0),
+               libmodule-pluggable-perl | perl (<< 5.17.9),
                libwxgtk3.0-dev,
                libwxgtk-media3.0-dev,
                libtest-pod-perl,
@@ -25,7 +25,7 @@ Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
          gcc | c-compiler,
-         libmodule-pluggable-perl | perl (<< 5.17.0)
+         libmodule-pluggable-perl | perl (<< 5.17.9)
 Breaks: libwx-perl (<< 1:0.9923-2)
 Provides: ${wxperl:Provides}
 Description: Perl module for locating wxWidgets binaries
