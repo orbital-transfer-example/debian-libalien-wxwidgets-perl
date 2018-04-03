@@ -1,4 +1,4 @@
-libalien-wxwidgets-perl (0.69+dfsg-2) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.69+dfsg-2) unstable; urgency=medium
 
   [ Damyan Ivanov ]
   * declare conformance with Policy 4.1.3 (no changes needed)
@@ -11,6 +11,9 @@ libalien-wxwidgets-perl (0.69+dfsg-2) UNRELEASED; urgency=medium
   * Replace MIT license by Expat
   * Bump debhelper compatibility level to 10
   * Add "Multi-Arch: same"
+
+  [ Olly Betts ]
+  * Switch build dependencies to the new GTK3 build of wxWidgets.
 
  -- Damyan Ivanov <dmn@debian.org>  Sat, 13 Jan 2018 13:19:58 +0000
 

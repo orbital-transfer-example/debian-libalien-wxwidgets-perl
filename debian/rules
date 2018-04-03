@@ -2,7 +2,9 @@
 
 # wxWidgets version
 WXVER=3.0
-export V=`dpkg -s libwxgtk$(WXVER)-dev | grep ^Version |cut -f2 -d' '`
+# wxWidgets flavour (empty for default flavour)
+WXFLAVOUR=-gtk3
+export V=`dpkg -s libwxgtk$(WXVER)$(WXFLAVOUR)-dev | grep ^Version |cut -f2 -d' '`
 VMAJOR:=$(shell echo $(V) |cut -f 1 -d .)
 VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
 VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
@@ -20,7 +22,7 @@ get_perl_wx_version: blib
 	@echo PERL_WX_VERSION detected as $(PERL_WX_VERSION)
 
 override_dh_gencontrol: get_perl_wx_version
-	dh_gencontrol -- -V'samewx:Depends=libwxgtk$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media$(WXVER)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media$(WXVER)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)' \
+	dh_gencontrol -- -V'samewx:Depends=libwxgtk$(WXVER)$(WXFLAVOUR)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk$(WXVER)$(WXFLAVOUR)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~), libwxgtk-media$(WXVER)$(WXFLAVOUR)-dev (>= $(VMAJOR).$(VMINOR).$(VPATCH)), libwxgtk-media$(WXVER)$(WXFLAVOUR)-dev (<< $(VMAJOR).$(VMINOR).$(NEXTPATCH)~)' \
 		-V'wxperl:Provides=wxperl-$(PERL_WX_VERSION)'
 
 .PHONY: get_perl_wx_version
