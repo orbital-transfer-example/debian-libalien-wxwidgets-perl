@@ -1,7 +1,11 @@
 libalien-wxwidgets-perl (0.69+dfsg-2.1) UNRELEASED; urgency=medium
 
+  [ Laurent Baillet ]
   * Non-maintainer upload.
   * fix lintian file-contains-trailing-whitespace warning
+
+  [ gregor herrmann ]
+  * debian/control: update Build-Depends for cross builds.
 
  -- Laurent Baillet <laurent.baillet@gmail.com>  Wed, 29 Aug 2018 14:29:07 +0000
 
