@@ -3,12 +3,13 @@ Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
 Uploaders: Damyan Ivanov <dmn@debian.org>,
            gregor herrmann <gregoa@debian.org>,
            Dominique Dumont <dod@debian.org>,
-	   Olly Betts <olly@survex.com>
+           Olly Betts <olly@survex.com>
 Section: perl
 Testsuite: autopkgtest-pkg-perl
 Priority: optional
 Build-Depends: debhelper (>= 10),
-               perl,
+               perl-xs-dev,
+               perl:native,
                libmodule-build-perl,
                libmodule-pluggable-perl | perl (<< 5.17.9),
                libwxgtk3.0-gtk3-dev,
@@ -22,6 +23,7 @@ Homepage: https://metacpan.org/release/Alien-wxWidgets
 
 Package: libalien-wxwidgets-perl
 Architecture: any
+Multi-Arch: same
 Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
@@ -29,7 +31,6 @@ Depends: ${perl:Depends},
          libmodule-pluggable-perl | perl (<< 5.17.9)
 Breaks: libwx-perl (<< 1:0.9923-2)
 Provides: ${wxperl:Provides}
-Multi-Arch: same
 Description: Perl module for locating wxWidgets binaries
  Alien::WxWidgets is a simple Perl module that detects configuration settings
  of an installed wxWidgets. It is useful to assist in the building of modules
