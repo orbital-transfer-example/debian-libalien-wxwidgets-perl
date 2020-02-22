@@ -1,4 +1,4 @@
-version=3
+version=4
 
 opts=dversionmangle=s/\+dfsg//,repacksuffix=+dfsg \
-https://metacpan.org/release/Alien-wxWidgets .*/Alien-wxWidgets-v?(\d[\d.-]+)\.(?:tar(?:\.gz|\.bz2)?|tgz|zip)$
+https://metacpan.org/release/Alien-wxWidgets .*/Alien-wxWidgets-v?@ANY_VERSION@@ARCHIVE_EXT@$
