@@ -7,7 +7,7 @@ Uploaders: Damyan Ivanov <dmn@debian.org>,
 Section: perl
 Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Build-Depends: debhelper (>= 12~),
+Build-Depends: debhelper-compat (= 12),
                perl-xs-dev,
                perl:native,
                libmodule-build-perl,
