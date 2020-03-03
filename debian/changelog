@@ -8,6 +8,9 @@ libalien-wxwidgets-perl (0.69+dfsg-2.1) UNRELEASED; urgency=medium
   * debian/control: update Build-Depends for cross builds.
   * debian/watch: use uscan version 4.
 
+  [ Debian Janitor ]
+  * Bump debhelper from old 10 to 12.
+
  -- Laurent Baillet <laurent.baillet@gmail.com>  Wed, 29 Aug 2018 14:29:07 +0000
 
 libalien-wxwidgets-perl (0.69+dfsg-2) unstable; urgency=medium
