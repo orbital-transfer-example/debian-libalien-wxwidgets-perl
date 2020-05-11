@@ -27,7 +27,7 @@ Multi-Arch: same
 Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
-         gcc | c-compiler,
+         gcc,
          libmodule-pluggable-perl | perl (<< 5.17.9)
 Breaks: libwx-perl (<< 1:0.9923-2)
 Provides: ${wxperl:Provides}
