@@ -1,2 +1,3 @@
-Bug-Database: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Alien-wxWidgets
-Repository: http://svn.code.sf.net/p/wxperl/code/Alien-wxWidgets
+---
+Bug-Database: https://rt.cpan.org/NoAuth/Bugs.html?Dist=Alien-wxWidgets
+Repository: https://svn.code.sf.net/p/wxperl/code/Alien-wxWidgets
