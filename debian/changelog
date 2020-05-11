@@ -1,7 +1,6 @@
-libalien-wxwidgets-perl (0.69+dfsg-2.1) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.69+dfsg-3) unstable; urgency=medium
 
   [ Laurent Baillet ]
-  * Non-maintainer upload.
   * fix lintian file-contains-trailing-whitespace warning
 
   [ gregor herrmann ]
@@ -13,7 +12,20 @@ libalien-wxwidgets-perl (0.69+dfsg-2.1) UNRELEASED; urgency=medium
   * Set debhelper-compat version in Build-Depends.
   * Set upstream metadata fields: Bug-Database, Repository.
 
- -- Laurent Baillet <laurent.baillet@gmail.com>  Wed, 29 Aug 2018 14:29:07 +0000
+  [ gregor herrmann ]
+  * Drop alternative dependency on c-compiler.
+    Not all packags providing c-compiler work with this package, especially
+    not tcc.
+    (Closes: #960214)
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.5.0.
+  * Set Rules-Requires-Root: no.
+  * Drop ancient Breaks.
+  * Drop ancient alternative (build) depends on perl.
+  * Annotate test-only build dependencies with <!nocheck>.
+  * Use HTTPS for URLs in debian/upstream/metadata.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 11 May 2020 18:18:00 +0200
 
 libalien-wxwidgets-perl (0.69+dfsg-2) unstable; urgency=medium
 
