@@ -11,7 +11,7 @@ Build-Depends: debhelper-compat (= 12),
                perl-xs-dev,
                perl:native,
                libmodule-build-perl,
-               libmodule-pluggable-perl | perl (<< 5.17.9),
+               libmodule-pluggable-perl,
                libwxgtk3.0-gtk3-dev,
                libwxgtk-media3.0-gtk3-dev,
                libtest-pod-perl,
@@ -29,7 +29,7 @@ Depends: ${perl:Depends},
          ${misc:Depends},
          ${samewx:Depends},
          gcc,
-         libmodule-pluggable-perl | perl (<< 5.17.9)
+         libmodule-pluggable-perl
 Provides: ${wxperl:Provides}
 Description: Perl module for locating wxWidgets binaries
  Alien::WxWidgets is a simple Perl module that detects configuration settings
