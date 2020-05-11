@@ -14,8 +14,8 @@ Build-Depends: debhelper-compat (= 12),
                libmodule-pluggable-perl,
                libwxgtk3.0-gtk3-dev,
                libwxgtk-media3.0-gtk3-dev,
-               libtest-pod-perl,
-               libtest-pod-coverage-perl
+               libtest-pod-perl <!nocheck>,
+               libtest-pod-coverage-perl <!nocheck>
 Standards-Version: 4.5.0
 Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libalien-wxwidgets-perl
 Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libalien-wxwidgets-perl.git
