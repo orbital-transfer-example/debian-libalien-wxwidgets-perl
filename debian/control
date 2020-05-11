@@ -8,14 +8,14 @@ Section: perl
 Testsuite: autopkgtest-pkg-perl
 Priority: optional
 Build-Depends: debhelper-compat (= 12),
-               perl-xs-dev,
-               perl:native,
                libmodule-build-perl,
                libmodule-pluggable-perl,
-               libwxgtk3.0-gtk3-dev,
-               libwxgtk-media3.0-gtk3-dev,
+               libtest-pod-coverage-perl <!nocheck>,
                libtest-pod-perl <!nocheck>,
-               libtest-pod-coverage-perl <!nocheck>
+               libwxgtk-media3.0-gtk3-dev,
+               libwxgtk3.0-gtk3-dev,
+               perl-xs-dev,
+               perl:native
 Standards-Version: 4.5.0
 Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libalien-wxwidgets-perl
 Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libalien-wxwidgets-perl.git
@@ -25,8 +25,8 @@ Rules-Requires-Root: no
 Package: libalien-wxwidgets-perl
 Architecture: any
 Multi-Arch: same
-Depends: ${perl:Depends},
-         ${misc:Depends},
+Depends: ${misc:Depends},
+         ${perl:Depends},
          ${samewx:Depends},
          gcc,
          libmodule-pluggable-perl
