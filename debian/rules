@@ -9,13 +9,11 @@ WXVER=3.2
 # 3.2: libwxgtk3.2-dev
 WXFLAVOUR=
 
-export V=`dpkg -s libwxgtk$(WXVER)$(WXFLAVOUR)-dev | grep ^Version |cut -f2 -d' '`
+V:=$(shell wx-config --version)
 VMAJOR:=$(shell echo $(V) |cut -f 1 -d .)
 VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
 VPATCH:=$(shell echo $(V) |cut -f 3 -d .)
-VPATCHU:=$(shell echo $(VPATCH) |cut -f 1 -d +)
-VPATCHD:=$(shell echo $(VPATCH) |cut -f 2 -d +)
-NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut -f 1 -d - ` + 1 2>/dev/null || expr $(VPATCHU) + 1 2>/dev/null)
+NEXTPATCH:=$(shell expr $(VPATCH) + 1 2>/dev/null || expr `echo $(VPATCH) | cut -f 1 -d - ` + 1 2>/dev/null)
 
 _DETECTION_CMD := PERL5LIB=$(CURDIR)/blib/lib:$(CURDIR)/blib/arch perl -MAlien::wxWidgets -e '$$key = Alien::wxWidgets->key; $$key =~ s/_/-/g; print "$$key";'
 
