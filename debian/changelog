@@ -1,3 +1,11 @@
+libalien-wxwidgets-perl (0.69+dfsg-4) UNRELEASED; urgency=medium
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 12 to 13.
+  * Update standards version to 4.6.0, no changes needed.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Wed, 14 Sep 2022 19:08:24 +0200
+
 libalien-wxwidgets-perl (0.69+dfsg-3) unstable; urgency=medium
 
   [ Laurent Baillet ]
