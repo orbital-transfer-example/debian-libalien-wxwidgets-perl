@@ -1,9 +1,14 @@
 #!/usr/bin/make -f
 
 # wxWidgets version
-WXVER=3.0
+WXVER=3.2
+
 # wxWidgets flavour (empty for default flavour)
-WXFLAVOUR=-gtk3
+# 3.0: libwxgtk3.0-gtk3-dev
+# WXFLAVOUR=-gtk3
+# 3.2: libwxgtk3.2-dev
+WXFLAVOUR=
+
 export V=`dpkg -s libwxgtk$(WXVER)$(WXFLAVOUR)-dev | grep ^Version |cut -f2 -d' '`
 VMAJOR:=$(shell echo $(V) |cut -f 1 -d .)
 VMINOR:=$(shell echo $(V) |cut -f 2 -d .)
