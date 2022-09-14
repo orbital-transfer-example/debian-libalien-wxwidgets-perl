@@ -1,3 +1,3 @@
-# While the files are non-binary, they depend on binary info about wxWidgets
-# so, they have the potential to differ from architecture to architecture
+# While the files are non-binary, they depend on binary info about # wxWidgets,
+# so they have the potential to differ from architecture to architecture
 libalien-wxwidgets-perl: package-installs-nonbinary-perl-in-usr-lib-perl5
