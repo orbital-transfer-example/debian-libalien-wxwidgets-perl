@@ -1,10 +1,23 @@
-libalien-wxwidgets-perl (0.69+dfsg-4) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.69+dfsg-4) experimental; urgency=medium
 
   [ Debian Janitor ]
   * Bump debhelper from old 12 to 13.
   * Update standards version to 4.6.0, no changes needed.
 
- -- Debian Janitor <janitor@jelmer.uk>  Wed, 14 Sep 2022 19:08:24 +0200
+  [ gregor herrmann ]
+  * debian/control: update build dependencies for the
+    wxWidgets 3.0 → 3.2 transition.
+  * debian/rules: update variables for the wxWidgets 3.0 → 3.2 transition.
+  * debian/rules: make wxWidgets version calculations more simple and
+    robust.
+    Use wx-config insted of dpkg to get the version.
+  * Add wx-common to Build-Depends for wx-config to be on the safe side.
+  * Update debian/upstream/metadata.
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.6.1.
+  * Upload to experimental.
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 14 Sep 2022 20:40:51 +0200
 
 libalien-wxwidgets-perl (0.69+dfsg-3) unstable; urgency=medium
 
