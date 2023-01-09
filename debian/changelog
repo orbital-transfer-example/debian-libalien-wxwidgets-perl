@@ -1,3 +1,12 @@
+libalien-wxwidgets-perl (0.69+dfsg-5) unstable; urgency=medium
+
+  * Update years of packaging copyright.
+  * Declare compliance with Debian Policy 4.6.2.
+  * Upload to unstable, as wxWidgets 3.2 has migrated and
+    libxwx-perl has a patch for it as well.
+
+ -- gregor herrmann <gregoa@debian.org>  Mon, 09 Jan 2023 17:56:24 +0100
+
 libalien-wxwidgets-perl (0.69+dfsg-4) experimental; urgency=medium
 
   [ Debian Janitor ]
