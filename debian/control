@@ -29,7 +29,6 @@ Multi-Arch: same
 Depends: ${misc:Depends},
          ${perl:Depends},
          ${samewx:Depends},
-         gcc,
          libmodule-pluggable-perl
 Provides: ${wxperl:Provides}
 Description: Perl module for locating wxWidgets binaries
