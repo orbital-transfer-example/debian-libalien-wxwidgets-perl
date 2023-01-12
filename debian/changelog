@@ -1,4 +1,4 @@
-libalien-wxwidgets-perl (0.69+dfsg-6) UNRELEASED; urgency=medium
+libalien-wxwidgets-perl (0.69+dfsg-6) unstable; urgency=medium
 
   * Drop gcc from Depends.
     gcc was added for the purpose of running the use.t autopkgtest
@@ -10,7 +10,7 @@ libalien-wxwidgets-perl (0.69+dfsg-6) UNRELEASED; urgency=medium
     libc6-dev). Add debian/tests/autopkgtest-pkg-perl.conf with
     "extra_depends: g++" in order to get a working full autopkgtest again.
 
- -- gregor herrmann <gregoa@debian.org>  Thu, 12 Jan 2023 19:50:48 +0100
+ -- gregor herrmann <gregoa@debian.org>  Thu, 12 Jan 2023 20:08:59 +0100
 
 libalien-wxwidgets-perl (0.69+dfsg-5) unstable; urgency=medium
 
