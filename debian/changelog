@@ -1,3 +1,17 @@
+libalien-wxwidgets-perl (0.69+dfsg-6) UNRELEASED; urgency=medium
+
+  * Drop gcc from Depends.
+    gcc was added for the purpose of running the use.t autopkgtest
+    (cf. #784846); now it would need at least g++, libc6-dev, etc..
+    As the build environment is only needed when libalien-wxwidgets-perl is
+    a build dependency, the direct runtime dependency can be dropped.
+  * Add debian/tests/autopkgtest-pkg-perl.conf.
+    When use()d, Alien::wxWidgets needs a full build environment (g++,
+    libc6-dev). Add debian/tests/autopkgtest-pkg-perl.conf with
+    "extra_depends: g++" in order to get a working full autopkgtest again.
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 12 Jan 2023 19:50:48 +0100
+
 libalien-wxwidgets-perl (0.69+dfsg-5) unstable; urgency=medium
 
   * Update years of packaging copyright.
