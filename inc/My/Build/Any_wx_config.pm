@@ -38,6 +38,7 @@ sub _init {
 
     my $wx_config =    ( $build && $build->notes( 'wx_config' ) )
                     || $ENV{WX_CONFIG} || 'wx-config';
+    $wx_config = 'sh /mingw64/bin/wx-config' if $^O eq 'MSWin32';
     my $ver = `$wx_config --version` or die "Can't execute '$wx_config': $!";
 
     $build->notes( 'wx_config' => _find( $wx_config ) )
@@ -156,6 +157,8 @@ sub _call_wx_config {
     my $wx_config =    $self->notes( 'wx_config' )
                     || $ENV{WX_CONFIG} || 'wx-config';
 
+    $wx_config = 'sh /mingw64/bin/wx-config' if $^O eq 'MSWin32';
+
     # not completely correct, but close
     $options = "--static $options" if $self->awx_static;
 
@@ -171,7 +174,7 @@ sub awx_compiler_kind {
     return Alien::wxWidgets::Utility::awx_compiler_kind( $_[1] )
 }
 
-sub awx_dlext { $Config{dlext} }
+sub awx_dlext { $^O eq 'MSWin32' ? 'dll.a' : $Config{dlext} }
 
 sub _key {
     my $self = shift;

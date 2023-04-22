@@ -68,7 +68,7 @@ my $build = $class->new
                          'wxWidgets-universal'       => { type => '!' },
                          'wxWidgets-build'           => { type => '!' },
                          'wxWidgets-portable'        => { type => '!',
-                                                        default => $^O eq 'MSWin32' },
+                                                        default => 0 },
                          'wxWidgets-build-opengl'    => { type => '!' },
                          'wxWidgets-source'          => { type => '=s' },
                          'wxWidgets-version'         => { type => '=s' },
@@ -165,7 +165,9 @@ $env_wxconfig
         exit(1);
     }
     
-    my $wx_config = $env_wxconfig || My::Build::Base->awx_path_search( 'wx-config' );
+    my $wx_config;
+    #my $wx_config = $env_wxconfig || My::Build::Base->awx_path_search( 'wx-config' );
+    $wx_config = 'sh /mingw64/bin/wx-config' if $^O eq 'MSWin32';
     if( $wx_config ) {
         my $ans = `$wx_config --version`;
         if( $ans =~ /^[23]\./ ) {

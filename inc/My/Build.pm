@@ -12,7 +12,7 @@ sub awx_get_package {
     local $_ = $Config{osname};
 
     # Win32
-    /MSWin32/ and return 'Win32';
+    #/MSWin32/ and return 'Win32';
     # MacOS X is slightly different...
     /darwin/ and return 'MacOSX_wx_config';
     # default
